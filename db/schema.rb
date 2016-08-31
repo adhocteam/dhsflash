@@ -10,17 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160831160949) do
+ActiveRecord::Schema.define(version: 20160831193240) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "kudos", force: :cascade do |t|
     t.text     "message"
-    t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_kudos_on_user_id", using: :btree
+    t.integer  "creator_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.integer  "recipient_id"
+    t.index ["creator_id"], name: "index_kudos_on_creator_id", using: :btree
+    t.index ["recipient_id"], name: "index_kudos_on_recipient_id", using: :btree
   end
 
   create_table "roles", force: :cascade do |t|

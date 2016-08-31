@@ -1,5 +1,9 @@
 class User < ApplicationRecord
   rolify
+
+  has_many :created_kudos, as: :creator
+  has_many :recipient_kudos, as: :recipient
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise(
