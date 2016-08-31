@@ -11,6 +11,7 @@ describe 'creating a kudo', type: :feature do
     end
 
     it 'should create the kudo' do
+      pending("remote kudo creation")
       find('#kudo_message').set('This is a cheesy kudo')
       find('#kudo_recipient_id').select(recipient.username)
       click_button 'Post Kudo'
@@ -20,6 +21,7 @@ describe 'creating a kudo', type: :feature do
     end
 
     it 'should fail without a message' do
+      pending("remote kudo creation")
       click_button 'Post Kudo'
       find('#kudo_recipient_id').select(recipient.username)
       expect(current_path).to eq('/kudos')
