@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
     var usernameSelect = document.querySelector('#kudo_recipient_id');
-    autocomplete(usernameSelect);
+    if (usernameSelect) {
+      autocomplete(usernameSelect);
+    }
 });
 
 function autocomplete(selectEl) {
