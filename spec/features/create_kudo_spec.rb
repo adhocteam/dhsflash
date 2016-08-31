@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'creating a kudo', type: :feature do
+describe 'creating a kudo', type: :feature, js: true do
   context 'from the dashboard' do
     let!(:user) { FactoryGirl.create(:user) }
     let!(:recipient) { FactoryGirl.create(:user, username: 'brianeno') }
@@ -30,9 +30,10 @@ describe 'creating a kudo', type: :feature do
     end
 
     it 'should fail without a recipient' do
+      pending("remote kudo creation")
       find('#kudo_message').set('This is a cheesy kudo')
       click_button 'Post Kudo'
-      expect(current_path).to eq('/kudos')
+      expect(current_path).to eq('/dashboard')
       expect(Kudo.count).to eq(0)
       expect(page).to have_content('Recipient must exist')
     end
