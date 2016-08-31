@@ -1,0 +1,55 @@
+
+// Converted Variables
+
+$space-1: .5rem !default;
+$media-object-space: $space-1 !default;
+
+// Custom Media Query Variables
+
+$breakpoint-sm: '(min-width: 40em)' !default;
+$breakpoint-md: '(min-width: 52em)' !default;
+$breakpoint-lg: '(min-width: 64em)' !default;
+
+/* Basscss Media Object */
+
+.u-media,
+.u-sm-media,
+.u-md-media,
+.u-lg-media {
+  margin-right: -$media-object-space;
+  margin-left: -$media-object-space;
+}
+
+.u-media {
+  display: flex;
+}
+
+.u-media-center {
+  align-items: center;
+}
+
+.u-media-bottom {
+  align-items: flex-end;
+}
+
+.u-media-img,
+.u-media-body {
+  padding-right: $media-object-space;
+  padding-left: $media-object-space;
+}
+
+.u-media-body {
+  flex: 1 1 auto;
+}
+
+@media #{$breakpoint-sm} {
+  .u-sm-media { display: flex }
+}
+
+@media #{$breakpoint-md} {
+  .u-md-media { display: flex }
+}
+
+@media #{$breakpoint-lg} {
+  .u-lg-media { display: flex }
+}

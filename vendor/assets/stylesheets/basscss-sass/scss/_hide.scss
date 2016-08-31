@@ -1,0 +1,38 @@
+
+// Converted Variables
+
+
+// Custom Media Query Variables
+
+$breakpoint-xs: '(max-width: 40em)' !default;
+$breakpoint-sm-md: '(min-width: 40em) and (max-width: 52em)' !default;
+$breakpoint-md-lg: '(min-width: 52em) and (max-width: 64em)' !default;
+$breakpoint-lg: '(min-width: 64em)' !default;
+
+/* Basscss Hide */
+
+.u-hide {
+  position: absolute !important;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  width: 1px;
+  height: 1px;
+}
+
+@media #{$breakpoint-xs} {
+  .u-xs-hide { display: none !important }
+}
+
+@media #{$breakpoint-sm-md} {
+  .u-sm-hide { display: none !important }
+}
+
+@media #{$breakpoint-md-lg} {
+  .u-md-hide { display: none !important }
+}
+
+@media #{$breakpoint-lg} {
+  .u-lg-hide { display: none !important }
+}
+
+.u-display-none { display: none !important }

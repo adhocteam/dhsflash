@@ -1,0 +1,82 @@
+
+// Converted Variables
+
+$form-field-padding-x: .5rem !default;
+$form-field-padding-y: .5rem !default;
+$form-field-height: 2.25rem !default;
+$border-radius: 3px !default;
+$darken-3: rgba(0, 0, 0, .25) !default;
+$range-thumb-width: $form-field-padding-x !default;
+$range-thumb-height: ( $form-field-height - ($form-field-padding-y * 2) ) !default;
+$range-track-height: ( $form-field-padding-y / 2 ) !default;
+$range-thumb-offset: ( $range-thumb-height / -2 + ($range-track-height / 2) ) !default;
+$range-thumb-pseudo-size: $form-field-height !default;
+
+// Custom Media Query Variables
+
+
+/* Basscss Input Range */
+
+.u-input-range {
+  padding-top: $form-field-padding-y;
+  padding-bottom: $form-field-padding-y;
+  vertical-align: middle;
+  color: inherit;
+  background-color: transparent;
+  background-color: transparent;
+
+  -webkit-appearance: none;
+}
+
+.u-input-range::-webkit-slider-thumb {
+  position: relative;
+  width: $range-thumb-width;
+  height: $range-thumb-height;
+  margin-top: $range-thumb-offset;
+  cursor: pointer;
+  border-radius: $border-radius;
+  background-color: currentcolor;
+
+  -webkit-appearance: none;
+}
+
+/* Touch screen friendly pseudo element */
+
+.u-input-range::-webkit-slider-thumb:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: ( -.5 * $range-thumb-pseudo-size + (.5 * $range-thumb-height) );
+  left: ( (-.5 * $range-thumb-pseudo-size) + (.5 * $range-thumb-width) );
+  width: $range-thumb-pseudo-size;
+  height: $range-thumb-pseudo-size;
+  opacity: 0;
+}
+
+.u-input-range::-moz-range-thumb {
+  width: $range-thumb-width;
+  height: $range-thumb-height;
+  cursor: pointer;
+  border-width: 0;
+  border-color: transparent;
+  border-radius: $border-radius;
+  background-color: currentcolor;
+}
+
+.u-input-range::-webkit-slider-runnable-track {
+  height: $range-track-height;
+  cursor: pointer;
+  border-radius: $border-radius;
+  background-color: $darken-3;
+}
+
+.u-input-range::-moz-range-track {
+  height: $range-track-height;
+  cursor: pointer;
+  border-radius: $border-radius;
+  background-color: $darken-3;
+}
+
+.u-input-range:focus {
+  outline: none;
+}

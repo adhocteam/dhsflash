@@ -1,0 +1,69 @@
+
+// Converted Variables
+
+$aqua: #7fdbff !default;
+$blue: #0074d9 !default;
+$navy: #001f3f !default;
+$teal: #39cccc !default;
+$green: #2ecc40 !default;
+$olive: #3d9970 !default;
+$lime: #01ff70 !default;
+$yellow: #ffdc00 !default;
+$orange: #ff851b !default;
+$red: #ff4136 !default;
+$fuchsia: #f012be !default;
+$purple: #b10dc9 !default;
+$maroon: #85144b !default;
+$white: #fff !default;
+$silver: #ddd !default;
+$gray: #aaa !default;
+$black: #111 !default;
+
+// Custom Media Query Variables
+
+
+/* Basscss Border Colors */
+
+/*
+
+   COLOR VARIABLES
+
+   - Cool
+   - Warm
+   - Gray Scale
+
+*/
+
+.u-border-black  { border-color: $black }
+
+.u-border-gray   { border-color: $gray }
+
+.u-border-silver { border-color: $silver }
+
+.u-border-white  { border-color: $white }
+
+.u-border-aqua  { border-color: $aqua }
+
+.u-border-blue  { border-color: $blue }
+
+.u-border-navy  { border-color: $navy }
+
+.u-border-teal  { border-color: $teal }
+
+.u-border-green { border-color: $green }
+
+.u-border-olive { border-color: $olive }
+
+.u-border-lime  { border-color: $lime }
+
+.u-border-yellow  { border-color: $yellow }
+
+.u-border-orange  { border-color: $orange }
+
+.u-border-red     { border-color: $red }
+
+.u-border-fuchsia { border-color: $fuchsia }
+
+.u-border-purple  { border-color: $purple }
+
+.u-border-maroon  { border-color: $maroon }
