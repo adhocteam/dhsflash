@@ -29,7 +29,7 @@
       <div class='top-bar-left'>
         <ul class='menu'>
           <li class='menu-text'>
-            <%= link_to('DHS FLASH', root_path) %>
+            <%= link_to('DHS FLASH', current_user ? dashboard_path : root_path) %>
           </li>
         </ul>
       </div>

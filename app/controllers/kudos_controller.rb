@@ -4,7 +4,7 @@ class KudosController < ApplicationController
   def create
     @kudo = Kudo.create(kudo_params)
     if @kudo.save
-      redirect_to root_path
+      redirect_to dashboard_path
     else
       render 'home/show'
     end

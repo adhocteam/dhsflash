@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   resources :kudos, only: [:create]
 
+  resource :dashboard, only: [:show], controller: 'dashboard'
+
   root 'home#show'
 
   namespace :admin do
