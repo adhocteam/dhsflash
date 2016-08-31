@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
 
+  resources :kudos, only: [:create]
+
   root 'home#show'
 
   namespace :admin do

@@ -28,7 +28,9 @@
     <div class='top-bar'>
       <div class='top-bar-left'>
         <ul class='menu'>
-          <li class='menu-text'>DHS FLASH</li>
+          <li class='menu-text'>
+            <%= link_to('DHS FLASH', root_path) %>
+          </li>
         </ul>
       </div>
       <div class='top-bar-right'>
@@ -71,10 +73,6 @@
         <% end %>
       </div>
     </div>
-    <div class='row'>
-      <div class='medium-8 medium-offset-2'>
-        <%= yield %>
-      </div>
-    </div>
+    <%= yield %>
   </body>
 </html>
