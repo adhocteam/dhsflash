@@ -46,6 +46,7 @@ function autocomplete(selectEl) {
     var updateACMatches = function() {
         if (matches.length === 0) {
             matchesDiv.style.display = 'none';
+            selectEl.value = null;
             return;
         }
 
