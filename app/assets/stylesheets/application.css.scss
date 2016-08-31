@@ -30,3 +30,16 @@ i {
 form label i {
   font-size: 100%;
 }
+
+.ah-ac-matches {
+  background: white;
+  border: 1px solid grey;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+  .ah-ac-match {
+    padding: 7px;
+    border-bottom: 1px solid #ccc;
+  }
+  :hover {
+    background: papayawhip;
+  }
+}
