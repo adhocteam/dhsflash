@@ -14,52 +14,52 @@ $bold-font-weight: bold !default;
 
 /* Basscss Typography */
 
-.font-family-inherit { font-family: inherit }
+.u-font-family-inherit { font-family: inherit }
 
-.font-size-inherit { font-size: inherit }
+.u-font-size-inherit { font-size: inherit }
 
-.text-decoration-none { text-decoration: none }
+.u-text-decoration-none { text-decoration: none }
 
-.bold    { font-weight: $bold-font-weight /* Fallback value:  bold */ }
+.u-bold    { font-weight: $bold-font-weight /* Fallback value:  bold */ }
 
-.regular { font-weight: normal }
+.u-regular { font-weight: normal }
 
-.italic  { font-style: italic }
+.u-italic  { font-style: italic }
 
-.caps    { text-transform: uppercase; letter-spacing: $caps-letter-spacing; }
+.u-caps    { letter-spacing: $caps-letter-spacing; text-transform: uppercase; }
 
-.left-align   { text-align: left }
+.u-left-align   { text-align: left }
 
-.center       { text-align: center }
+.u-center       { text-align: center }
 
-.right-align  { text-align: right }
+.u-right-align  { text-align: right }
 
-.justify      { text-align: justify }
+.u-justify      { text-align: justify }
 
-.nowrap { white-space: nowrap }
+.u-nowrap { white-space: nowrap }
 
-.break-word { word-wrap: break-word }
+.u-break-word { word-wrap: break-word }
 
-.line-height-1 { line-height: $line-height-1 }
+.u-line-height-1 { line-height: $line-height-1 }
 
-.line-height-2 { line-height: $line-height-2 }
+.u-line-height-2 { line-height: $line-height-2 }
 
-.line-height-3 { line-height: $line-height-3 }
+.u-line-height-3 { line-height: $line-height-3 }
 
-.line-height-4 { line-height: $line-height-4 }
+.u-line-height-4 { line-height: $line-height-4 }
 
-.list-style-none { list-style: none }
+.u-list-style-none { list-style: none }
 
-.underline { text-decoration: underline }
+.u-underline { text-decoration: underline }
 
-.truncate {
-  max-width: 100%;
+.u-truncate {
   overflow: hidden;
-  text-overflow: ellipsis;
+  max-width: 100%;
   white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
-.list-reset {
-  list-style: none;
+.u-list-reset {
   padding-left: 0;
+  list-style: none;
 }

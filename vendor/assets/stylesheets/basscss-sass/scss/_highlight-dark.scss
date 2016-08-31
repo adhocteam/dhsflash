@@ -50,117 +50,118 @@ $hljs-chunk: $gray !default;
 
 */
 
-.highlight-dark .hljs {
+.u-highlight-dark .hljs {
   color: white;
+
   -webkit-text-size-adjust: none;
 }
 
-.highlight-dark .hljs-comment,
-.highlight-dark .diff .hljs-header,
-.highlight-dark .hljs-javadoc {
-  color: $hljs-comment;
+.u-highlight-dark .hljs-comment,
+.u-highlight-dark .diff .hljs-header,
+.u-highlight-dark .hljs-javadoc {
   font-style: italic;
+  color: $hljs-comment;
 }
 
-.highlight-dark .hljs-keyword,
-.highlight-dark .css .rule .hljs-keyword,
-.highlight-dark .hljs-winutils,
-.highlight-dark .nginx .hljs-title,
-.highlight-dark .hljs-subst,
-.highlight-dark .hljs-request,
-.highlight-dark .hljs-status {
-  color: $hljs-keyword;
+.u-highlight-dark .hljs-keyword,
+.u-highlight-dark .css .rule .hljs-keyword,
+.u-highlight-dark .hljs-winutils,
+.u-highlight-dark .nginx .hljs-title,
+.u-highlight-dark .hljs-subst,
+.u-highlight-dark .hljs-request,
+.u-highlight-dark .hljs-status {
   font-weight: bold;
+  color: $hljs-keyword;
 }
 
-.highlight-dark .hljs-number,
-.highlight-dark .hljs-hexcolor,
-.highlight-dark .ruby .hljs-constant {
+.u-highlight-dark .hljs-number,
+.u-highlight-dark .hljs-hexcolor,
+.u-highlight-dark .ruby .hljs-constant {
   color: $hljs-number;
 }
 
-.highlight-dark .hljs-string,
-.highlight-dark .hljs-tag .hljs-value,
-.highlight-dark .hljs-phpdoc,
-.highlight-dark .hljs-dartdoc,
-.highlight-dark .tex .hljs-formula {
+.u-highlight-dark .hljs-string,
+.u-highlight-dark .hljs-tag .hljs-value,
+.u-highlight-dark .hljs-phpdoc,
+.u-highlight-dark .hljs-dartdoc,
+.u-highlight-dark .tex .hljs-formula {
   color: $hljs-string;
 }
 
-.hljs-title,
-.hljs-id,
-.scss .hljs-preprocessor {
+.u-hljs-title,
+.u-hljs-id,
+.u-scss .hljs-preprocessor {
+  font-weight: bold;
   color: $hljs-title;
-  font-weight: bold;
 }
 
-.highlight-dark .hljs-list .hljs-keyword,
-.highlight-dark .hljs-subst {
+.u-highlight-dark .hljs-list .hljs-keyword,
+.u-highlight-dark .hljs-subst {
   font-weight: normal;
 }
 
-.highlight-dark .hljs-class .hljs-title,
-.highlight-dark .hljs-type,
-.highlight-dark .vhdl .hljs-literal,
-.highlight-dark .tex .hljs-command {
+.u-highlight-dark .hljs-class .hljs-title,
+.u-highlight-dark .hljs-type,
+.u-highlight-dark .vhdl .hljs-literal,
+.u-highlight-dark .tex .hljs-command {
+  font-weight: bold;
   color: $hljs-type;
-  font-weight: bold;
 }
 
-.highlight-dark .hljs-tag,
-.highlight-dark .hljs-tag .hljs-title,
-.highlight-dark .hljs-rules .hljs-property,
-.highlight-dark .django .hljs-tag .hljs-keyword {
-  color: $hljs-tag;
+.u-highlight-dark .hljs-tag,
+.u-highlight-dark .hljs-tag .hljs-title,
+.u-highlight-dark .hljs-rules .hljs-property,
+.u-highlight-dark .django .hljs-tag .hljs-keyword {
   font-weight: normal;
+  color: $hljs-tag;
 }
 
-.highlight-dark .hljs-attribute,
-.highlight-dark .hljs-variable,
-.highlight-dark .lisp .hljs-body {
+.u-highlight-dark .hljs-attribute,
+.u-highlight-dark .hljs-variable,
+.u-highlight-dark .lisp .hljs-body {
   color: $hljs-attribute;
 }
 
-.highlight-dark .hljs-regexp {
+.u-highlight-dark .hljs-regexp {
   color: $hljs-regexp;
 }
 
-.highlight-dark .hljs-symbol,
-.highlight-dark .ruby .hljs-symbol .hljs-string,
-.highlight-dark .lisp .hljs-keyword,
-.highlight-dark .clojure .hljs-keyword,
-.highlight-dark .scheme .hljs-keyword,
-.highlight-dark .tex .hljs-special,
-.highlight-dark .hljs-prompt {
+.u-highlight-dark .hljs-symbol,
+.u-highlight-dark .ruby .hljs-symbol .hljs-string,
+.u-highlight-dark .lisp .hljs-keyword,
+.u-highlight-dark .clojure .hljs-keyword,
+.u-highlight-dark .scheme .hljs-keyword,
+.u-highlight-dark .tex .hljs-special,
+.u-highlight-dark .hljs-prompt {
   color: $hljs-symbol;
 }
 
-.highlight-dark .hljs-built_in {
+.u-highlight-dark .hljs-built_in {
   color: $hljs-built-in;
 }
 
-.highlight-dark .hljs-preprocessor,
-.highlight-dark .hljs-pragma,
-.highlight-dark .hljs-pi,
-.highlight-dark .hljs-doctype,
-.highlight-dark .hljs-shebang,
-.highlight-dark .hljs-cdata {
-  color: $hljs-preprocessor;
+.u-highlight-dark .hljs-preprocessor,
+.u-highlight-dark .hljs-pragma,
+.u-highlight-dark .hljs-pi,
+.u-highlight-dark .hljs-doctype,
+.u-highlight-dark .hljs-shebang,
+.u-highlight-dark .hljs-cdata {
   font-weight: bold;
+  color: $hljs-preprocessor;
 }
 
-.highlight-dark .hljs-deletion {
+.u-highlight-dark .hljs-deletion {
   background: $hljs-deletion;
 }
 
-.highlight-dark .hljs-addition {
+.u-highlight-dark .hljs-addition {
   background: $hljs-addition;
 }
 
-.highlight-dark .diff .hljs-change {
+.u-highlight-dark .diff .hljs-change {
   background: $hljs-change;
 }
 
-.highlight-dark .hljs-chunk {
+.u-highlight-dark .hljs-chunk {
   color: $hljs-chunk;
 }

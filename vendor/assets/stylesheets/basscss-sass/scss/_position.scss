@@ -11,24 +11,24 @@ $z4: 4 !default;
 
 /* Basscss Position */
 
-.relative { position: relative }
+.u-relative { position: relative }
 
-.absolute { position: absolute }
+.u-absolute { position: absolute }
 
-.fixed    { position: fixed }
+.u-fixed    { position: fixed }
 
-.top-0    { top: 0 }
+.u-top-0    { top: 0 }
 
-.right-0  { right: 0 }
+.u-right-0  { right: 0 }
 
-.bottom-0 { bottom: 0 }
+.u-bottom-0 { bottom: 0 }
 
-.left-0   { left: 0 }
+.u-left-0   { left: 0 }
 
-.z1 { z-index: $z1 }
+.u-z1 { z-index: $z1 }
 
-.z2 { z-index: $z2 }
+.u-z2 { z-index: $z2 }
 
-.z3 { z-index: $z3 }
+.u-z3 { z-index: $z3 }
 
-.z4 { z-index: $z4 }
+.u-z4 { z-index: $z4 }

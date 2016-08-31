@@ -10,28 +10,31 @@ $darken-2: rgba(0, 0, 0, .125) !default;
 
 /* Basscss Progress */
 
-.progress {
+.u-progress {
   display: block;
+  overflow: hidden;
   width: 100%;
   height: ( $form-field-height / 4 );
   margin: $form-field-padding-y 0;
-  overflow: hidden;
-  background-color: $darken-2;
   border: 0;
   border-radius: 10000px;
+  background-color: $darken-2;
+
   -webkit-appearance: none;
 }
 
-.progress::-webkit-progress-bar {
-  -webkit-appearance: none;
-  background-color: $darken-2
+.u-progress::-webkit-progress-bar {
+  background-color: $darken-2;
+
+  -webkit-appearance: none
 }
 
-.progress::-webkit-progress-value {
-  -webkit-appearance: none;
+.u-progress::-webkit-progress-value {
   background-color: currentcolor;
+
+  -webkit-appearance: none;
 }
 
-.progress::-moz-progress-bar {
+.u-progress::-moz-progress-bar {
   background-color: currentcolor;
 }

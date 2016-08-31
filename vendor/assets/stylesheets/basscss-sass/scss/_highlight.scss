@@ -50,117 +50,117 @@ $hljs-chunk: $silver !default;
 
 */
 
-.hljs {
+.u-hljs {
   -webkit-text-size-adjust: none;
 }
 
-.hljs-comment,
-.diff .hljs-header,
-.hljs-javadoc {
-  color: $hljs-comment;
+.u-hljs-comment,
+.u-diff .hljs-header,
+.u-hljs-javadoc {
   font-style: italic;
+  color: $hljs-comment;
 }
 
-.hljs-keyword,
-.css .rule .hljs-keyword,
-.hljs-winutils,
-.nginx .hljs-title,
-.hljs-subst,
-.hljs-request,
-.hljs-status {
-  color: $hljs-keyword;
+.u-hljs-keyword,
+.u-css .rule .hljs-keyword,
+.u-hljs-winutils,
+.u-nginx .hljs-title,
+.u-hljs-subst,
+.u-hljs-request,
+.u-hljs-status {
   font-weight: bold;
+  color: $hljs-keyword;
 }
 
-.hljs-number,
-.hljs-hexcolor,
-.ruby .hljs-constant {
+.u-hljs-number,
+.u-hljs-hexcolor,
+.u-ruby .hljs-constant {
   color: $hljs-number;
 }
 
-.hljs-string,
-.hljs-tag .hljs-value,
-.hljs-phpdoc,
-.hljs-dartdoc,
-.tex .hljs-formula {
+.u-hljs-string,
+.u-hljs-tag .hljs-value,
+.u-hljs-phpdoc,
+.u-hljs-dartdoc,
+.u-tex .hljs-formula {
   color: $hljs-string;
 }
 
-.hljs-title,
-.hljs-id,
-.scss .hljs-preprocessor {
+.u-hljs-title,
+.u-hljs-id,
+.u-scss .hljs-preprocessor {
+  font-weight: bold;
   color: $hljs-title;
-  font-weight: bold;
 }
 
-.hljs-list .hljs-keyword,
-.hljs-subst {
+.u-hljs-list .hljs-keyword,
+.u-hljs-subst {
   font-weight: normal;
 }
 
-.hljs-class .hljs-title,
-.hljs-type,
-.vhdl .hljs-literal,
-.tex .hljs-command {
+.u-hljs-class .hljs-title,
+.u-hljs-type,
+.u-vhdl .hljs-literal,
+.u-tex .hljs-command {
+  font-weight: bold;
   color: $hljs-type;
-  font-weight: bold;
 }
 
-.hljs-tag,
-.hljs-tag .hljs-title,
-.hljs-rules .hljs-property,
-.django .hljs-tag .hljs-keyword {
-  color: $hljs-tag;
+.u-hljs-tag,
+.u-hljs-tag .hljs-title,
+.u-hljs-rules .hljs-property,
+.u-django .hljs-tag .hljs-keyword {
   font-weight: normal;
+  color: $hljs-tag;
 }
 
-.hljs-attribute,
-.hljs-variable,
-.lisp .hljs-body {
+.u-hljs-attribute,
+.u-hljs-variable,
+.u-lisp .hljs-body {
   color: $hljs-attribute;
 }
 
-.hljs-regexp {
+.u-hljs-regexp {
   color: $hljs-regexp;
 }
 
-.hljs-symbol,
-.ruby .hljs-symbol .hljs-string,
-.lisp .hljs-keyword,
-.clojure .hljs-keyword,
-.scheme .hljs-keyword,
-.tex .hljs-special,
-.hljs-prompt {
+.u-hljs-symbol,
+.u-ruby .hljs-symbol .hljs-string,
+.u-lisp .hljs-keyword,
+.u-clojure .hljs-keyword,
+.u-scheme .hljs-keyword,
+.u-tex .hljs-special,
+.u-hljs-prompt {
   color: $hljs-symbol;
 }
 
-.hljs-built_in {
+.u-hljs-built_in {
   color: $hljs-built-in;
 }
 
-.hljs-preprocessor,
-.hljs-pragma,
-.hljs-pi,
-.hljs-doctype,
-.hljs-shebang,
-.hljs-cdata {
-  color: $hljs-preprocessor;
+.u-hljs-preprocessor,
+.u-hljs-pragma,
+.u-hljs-pi,
+.u-hljs-doctype,
+.u-hljs-shebang,
+.u-hljs-cdata {
   font-weight: bold;
+  color: $hljs-preprocessor;
 }
 
-.hljs-deletion {
+.u-hljs-deletion {
   background: $hljs-deletion;
 }
 
-.hljs-addition {
+.u-hljs-addition {
   background: $hljs-addition;
 }
 
-.diff .hljs-change {
+.u-diff .hljs-change {
   background: $hljs-change;
 }
 
-.hljs-chunk {
+.u-hljs-chunk {
   color: $hljs-chunk;
 }
 

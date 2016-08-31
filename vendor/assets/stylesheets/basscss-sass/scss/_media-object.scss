@@ -12,44 +12,44 @@ $breakpoint-lg: '(min-width: 64em)' !default;
 
 /* Basscss Media Object */
 
-.media,
-.sm-media,
-.md-media,
-.lg-media {
-  margin-left: -$media-object-space;
+.u-media,
+.u-sm-media,
+.u-md-media,
+.u-lg-media {
   margin-right: -$media-object-space;
+  margin-left: -$media-object-space;
 }
 
-.media {
+.u-media {
   display: flex;
 }
 
-.media-center {
+.u-media-center {
   align-items: center;
 }
 
-.media-bottom {
+.u-media-bottom {
   align-items: flex-end;
 }
 
-.media-img,
-.media-body {
-  padding-left: $media-object-space;
+.u-media-img,
+.u-media-body {
   padding-right: $media-object-space;
+  padding-left: $media-object-space;
 }
 
-.media-body {
+.u-media-body {
   flex: 1 1 auto;
 }
 
 @media #{$breakpoint-sm} {
-  .sm-media { display: flex }
+  .u-sm-media { display: flex }
 }
 
 @media #{$breakpoint-md} {
-  .md-media { display: flex }
+  .u-md-media { display: flex }
 }
 
 @media #{$breakpoint-lg} {
-  .lg-media { display: flex }
+  .u-lg-media { display: flex }
 }

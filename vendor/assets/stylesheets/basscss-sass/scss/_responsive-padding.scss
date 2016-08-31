@@ -15,133 +15,322 @@ $breakpoint-lg: '(min-width: 64em)' !default;
 /* Basscss Responsive Padding */
 
 @media #{$breakpoint-sm} {
+  .u-sm-p0  { padding:        0 }
 
-  .sm-p0  { padding:        0 }
-  .sm-pt0 { padding-top:    0 }
-  .sm-pr0 { padding-right:  0 }
-  .sm-pb0 { padding-bottom: 0 }
-  .sm-pl0 { padding-left:   0 }
-  .sm-px0 { padding-left:   0; padding-right:  0 }
-  .sm-py0 { padding-top:    0; padding-bottom: 0 }
 
-  .sm-p1  { padding:        $space-1 }
-  .sm-pt1 { padding-top:    $space-1 }
-  .sm-pr1 { padding-right:  $space-1 }
-  .sm-pb1 { padding-bottom: $space-1 }
-  .sm-pl1 { padding-left:   $space-1 }
-  .sm-px1 { padding-left:   $space-1; padding-right:  $space-1 }
-  .sm-py1 { padding-top:    $space-1; padding-bottom: $space-1 }
+  .u-sm-pt0 { padding-top:    0 }
 
-  .sm-p2  { padding:        $space-2 }
-  .sm-pt2 { padding-top:    $space-2 }
-  .sm-pr2 { padding-right:  $space-2 }
-  .sm-pb2 { padding-bottom: $space-2 }
-  .sm-pl2 { padding-left:   $space-2 }
-  .sm-px2 { padding-left:   $space-2; padding-right:  $space-2 }
-  .sm-py2 { padding-top:    $space-2; padding-bottom: $space-2 }
 
-  .sm-p3  { padding:        $space-3 }
-  .sm-pt3 { padding-top:    $space-3 }
-  .sm-pr3 { padding-right:  $space-3 }
-  .sm-pb3 { padding-bottom: $space-3 }
-  .sm-pl3 { padding-left:   $space-3 }
-  .sm-px3 { padding-left:   $space-3; padding-right:  $space-3 }
-  .sm-py3 { padding-top:    $space-3; padding-bottom: $space-3 }
+  .u-sm-pr0 { padding-right:  0 }
 
-  .sm-p4  { padding:        $space-4 }
-  .sm-pt4 { padding-top:    $space-4 }
-  .sm-pr4 { padding-right:  $space-4 }
-  .sm-pb4 { padding-bottom: $space-4 }
-  .sm-pl4 { padding-left:   $space-4 }
-  .sm-px4 { padding-left:   $space-4; padding-right:  $space-4 }
-  .sm-py4 { padding-top:    $space-4; padding-bottom: $space-4 }
+
+  .u-sm-pb0 { padding-bottom: 0 }
+
+
+  .u-sm-pl0 { padding-left:   0 }
+
+
+  .u-sm-px0 { padding-right:  0; padding-left:   0 }
+
+
+  .u-sm-py0 { padding-top:    0; padding-bottom: 0 }
+
+
+  .u-sm-p1  { padding:        $space-1 }
+
+
+  .u-sm-pt1 { padding-top:    $space-1 }
+
+
+  .u-sm-pr1 { padding-right:  $space-1 }
+
+
+  .u-sm-pb1 { padding-bottom: $space-1 }
+
+
+  .u-sm-pl1 { padding-left:   $space-1 }
+
+
+  .u-sm-px1 { padding-right:  $space-1; padding-left:   $space-1 }
+
+
+  .u-sm-py1 { padding-top:    $space-1; padding-bottom: $space-1 }
+
+
+  .u-sm-p2  { padding:        $space-2 }
+
+
+  .u-sm-pt2 { padding-top:    $space-2 }
+
+
+  .u-sm-pr2 { padding-right:  $space-2 }
+
+
+  .u-sm-pb2 { padding-bottom: $space-2 }
+
+
+  .u-sm-pl2 { padding-left:   $space-2 }
+
+
+  .u-sm-px2 { padding-right:  $space-2; padding-left:   $space-2 }
+
+
+  .u-sm-py2 { padding-top:    $space-2; padding-bottom: $space-2 }
+
+
+  .u-sm-p3  { padding:        $space-3 }
+
+
+  .u-sm-pt3 { padding-top:    $space-3 }
+
+
+  .u-sm-pr3 { padding-right:  $space-3 }
+
+
+  .u-sm-pb3 { padding-bottom: $space-3 }
+
+
+  .u-sm-pl3 { padding-left:   $space-3 }
+
+
+  .u-sm-px3 { padding-right:  $space-3; padding-left:   $space-3 }
+
+
+  .u-sm-py3 { padding-top:    $space-3; padding-bottom: $space-3 }
+
+
+  .u-sm-p4  { padding:        $space-4 }
+
+
+  .u-sm-pt4 { padding-top:    $space-4 }
+
+
+  .u-sm-pr4 { padding-right:  $space-4 }
+
+
+  .u-sm-pb4 { padding-bottom: $space-4 }
+
+
+  .u-sm-pl4 { padding-left:   $space-4 }
+
+
+  .u-sm-px4 { padding-right:  $space-4; padding-left:   $space-4 }
+
+
+  .u-sm-py4 { padding-top:    $space-4; padding-bottom: $space-4 }
 
 }
 
 @media #{$breakpoint-md} {
+  .u-md-p0  { padding:        0 }
 
-  .md-p0  { padding:        0 }
-  .md-pt0 { padding-top:    0 }
-  .md-pr0 { padding-right:  0 }
-  .md-pb0 { padding-bottom: 0 }
-  .md-pl0 { padding-left:   0 }
-  .md-px0 { padding-left:   0; padding-right:  0 }
-  .md-py0 { padding-top:    0; padding-bottom: 0 }
 
-  .md-p1  { padding:        $space-1 }
-  .md-pt1 { padding-top:    $space-1 }
-  .md-pr1 { padding-right:  $space-1 }
-  .md-pb1 { padding-bottom: $space-1 }
-  .md-pl1 { padding-left:   $space-1 }
-  .md-px1 { padding-left:   $space-1; padding-right:  $space-1 }
-  .md-py1 { padding-top:    $space-1; padding-bottom: $space-1 }
+  .u-md-pt0 { padding-top:    0 }
 
-  .md-p2  { padding:        $space-2 }
-  .md-pt2 { padding-top:    $space-2 }
-  .md-pr2 { padding-right:  $space-2 }
-  .md-pb2 { padding-bottom: $space-2 }
-  .md-pl2 { padding-left:   $space-2 }
-  .md-px2 { padding-left:   $space-2; padding-right:  $space-2 }
-  .md-py2 { padding-top:    $space-2; padding-bottom: $space-2 }
 
-  .md-p3  { padding:        $space-3 }
-  .md-pt3 { padding-top:    $space-3 }
-  .md-pr3 { padding-right:  $space-3 }
-  .md-pb3 { padding-bottom: $space-3 }
-  .md-pl3 { padding-left:   $space-3 }
-  .md-px3 { padding-left:   $space-3; padding-right:  $space-3 }
-  .md-py3 { padding-top:    $space-3; padding-bottom: $space-3 }
+  .u-md-pr0 { padding-right:  0 }
 
-  .md-p4  { padding:        $space-4 }
-  .md-pt4 { padding-top:    $space-4 }
-  .md-pr4 { padding-right:  $space-4 }
-  .md-pb4 { padding-bottom: $space-4 }
-  .md-pl4 { padding-left:   $space-4 }
-  .md-px4 { padding-left:   $space-4; padding-right:  $space-4 }
-  .md-py4 { padding-top:    $space-4; padding-bottom: $space-4 }
+
+  .u-md-pb0 { padding-bottom: 0 }
+
+
+  .u-md-pl0 { padding-left:   0 }
+
+
+  .u-md-px0 { padding-right:  0; padding-left:   0 }
+
+
+  .u-md-py0 { padding-top:    0; padding-bottom: 0 }
+
+
+  .u-md-p1  { padding:        $space-1 }
+
+
+  .u-md-pt1 { padding-top:    $space-1 }
+
+
+  .u-md-pr1 { padding-right:  $space-1 }
+
+
+  .u-md-pb1 { padding-bottom: $space-1 }
+
+
+  .u-md-pl1 { padding-left:   $space-1 }
+
+
+  .u-md-px1 { padding-right:  $space-1; padding-left:   $space-1 }
+
+
+  .u-md-py1 { padding-top:    $space-1; padding-bottom: $space-1 }
+
+
+  .u-md-p2  { padding:        $space-2 }
+
+
+  .u-md-pt2 { padding-top:    $space-2 }
+
+
+  .u-md-pr2 { padding-right:  $space-2 }
+
+
+  .u-md-pb2 { padding-bottom: $space-2 }
+
+
+  .u-md-pl2 { padding-left:   $space-2 }
+
+
+  .u-md-px2 { padding-right:  $space-2; padding-left:   $space-2 }
+
+
+  .u-md-py2 { padding-top:    $space-2; padding-bottom: $space-2 }
+
+
+  .u-md-p3  { padding:        $space-3 }
+
+
+  .u-md-pt3 { padding-top:    $space-3 }
+
+
+  .u-md-pr3 { padding-right:  $space-3 }
+
+
+  .u-md-pb3 { padding-bottom: $space-3 }
+
+
+  .u-md-pl3 { padding-left:   $space-3 }
+
+
+  .u-md-px3 { padding-right:  $space-3; padding-left:   $space-3 }
+
+
+  .u-md-py3 { padding-top:    $space-3; padding-bottom: $space-3 }
+
+
+  .u-md-p4  { padding:        $space-4 }
+
+
+  .u-md-pt4 { padding-top:    $space-4 }
+
+
+  .u-md-pr4 { padding-right:  $space-4 }
+
+
+  .u-md-pb4 { padding-bottom: $space-4 }
+
+
+  .u-md-pl4 { padding-left:   $space-4 }
+
+
+  .u-md-px4 { padding-right:  $space-4; padding-left:   $space-4 }
+
+
+  .u-md-py4 { padding-top:    $space-4; padding-bottom: $space-4 }
 
 }
 
 @media #{$breakpoint-lg} {
+  .u-lg-p0  { padding:        0 }
 
-  .lg-p0  { padding:        0 }
-  .lg-pt0 { padding-top:    0 }
-  .lg-pr0 { padding-right:  0 }
-  .lg-pb0 { padding-bottom: 0 }
-  .lg-pl0 { padding-left:   0 }
-  .lg-px0 { padding-left:   0; padding-right:  0 }
-  .lg-py0 { padding-top:    0; padding-bottom: 0 }
 
-  .lg-p1  { padding:        $space-1 }
-  .lg-pt1 { padding-top:    $space-1 }
-  .lg-pr1 { padding-right:  $space-1 }
-  .lg-pb1 { padding-bottom: $space-1 }
-  .lg-pl1 { padding-left:   $space-1 }
-  .lg-px1 { padding-left:   $space-1; padding-right:  $space-1 }
-  .lg-py1 { padding-top:    $space-1; padding-bottom: $space-1 }
+  .u-lg-pt0 { padding-top:    0 }
 
-  .lg-p2  { padding:        $space-2 }
-  .lg-pt2 { padding-top:    $space-2 }
-  .lg-pr2 { padding-right:  $space-2 }
-  .lg-pb2 { padding-bottom: $space-2 }
-  .lg-pl2 { padding-left:   $space-2 }
-  .lg-px2 { padding-left:   $space-2; padding-right:  $space-2 }
-  .lg-py2 { padding-top:    $space-2; padding-bottom: $space-2 }
 
-  .lg-p3  { padding:        $space-3 }
-  .lg-pt3 { padding-top:    $space-3 }
-  .lg-pr3 { padding-right:  $space-3 }
-  .lg-pb3 { padding-bottom: $space-3 }
-  .lg-pl3 { padding-left:   $space-3 }
-  .lg-px3 { padding-left:   $space-3; padding-right:  $space-3 }
-  .lg-py3 { padding-top:    $space-3; padding-bottom: $space-3 }
+  .u-lg-pr0 { padding-right:  0 }
 
-  .lg-p4  { padding:        $space-4 }
-  .lg-pt4 { padding-top:    $space-4 }
-  .lg-pr4 { padding-right:  $space-4 }
-  .lg-pb4 { padding-bottom: $space-4 }
-  .lg-pl4 { padding-left:   $space-4 }
-  .lg-px4 { padding-left:   $space-4; padding-right:  $space-4 }
-  .lg-py4 { padding-top:    $space-4; padding-bottom: $space-4 }
+
+  .u-lg-pb0 { padding-bottom: 0 }
+
+
+  .u-lg-pl0 { padding-left:   0 }
+
+
+  .u-lg-px0 { padding-right:  0; padding-left:   0 }
+
+
+  .u-lg-py0 { padding-top:    0; padding-bottom: 0 }
+
+
+  .u-lg-p1  { padding:        $space-1 }
+
+
+  .u-lg-pt1 { padding-top:    $space-1 }
+
+
+  .u-lg-pr1 { padding-right:  $space-1 }
+
+
+  .u-lg-pb1 { padding-bottom: $space-1 }
+
+
+  .u-lg-pl1 { padding-left:   $space-1 }
+
+
+  .u-lg-px1 { padding-right:  $space-1; padding-left:   $space-1 }
+
+
+  .u-lg-py1 { padding-top:    $space-1; padding-bottom: $space-1 }
+
+
+  .u-lg-p2  { padding:        $space-2 }
+
+
+  .u-lg-pt2 { padding-top:    $space-2 }
+
+
+  .u-lg-pr2 { padding-right:  $space-2 }
+
+
+  .u-lg-pb2 { padding-bottom: $space-2 }
+
+
+  .u-lg-pl2 { padding-left:   $space-2 }
+
+
+  .u-lg-px2 { padding-right:  $space-2; padding-left:   $space-2 }
+
+
+  .u-lg-py2 { padding-top:    $space-2; padding-bottom: $space-2 }
+
+
+  .u-lg-p3  { padding:        $space-3 }
+
+
+  .u-lg-pt3 { padding-top:    $space-3 }
+
+
+  .u-lg-pr3 { padding-right:  $space-3 }
+
+
+  .u-lg-pb3 { padding-bottom: $space-3 }
+
+
+  .u-lg-pl3 { padding-left:   $space-3 }
+
+
+  .u-lg-px3 { padding-right:  $space-3; padding-left:   $space-3 }
+
+
+  .u-lg-py3 { padding-top:    $space-3; padding-bottom: $space-3 }
+
+
+  .u-lg-p4  { padding:        $space-4 }
+
+
+  .u-lg-pt4 { padding-top:    $space-4 }
+
+
+  .u-lg-pr4 { padding-right:  $space-4 }
+
+
+  .u-lg-pb4 { padding-bottom: $space-4 }
+
+
+  .u-lg-pl4 { padding-left:   $space-4 }
+
+
+  .u-lg-px4 { padding-right:  $space-4; padding-left:   $space-4 }
+
+
+  .u-lg-py4 { padding-top:    $space-4; padding-bottom: $space-4 }
 
 }

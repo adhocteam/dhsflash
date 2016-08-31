@@ -7,44 +7,44 @@
 
 /* Basscss Forms */
 
-.label {
-  font-size: .875rem;
-  font-weight: bold;
+.u-label {
   display: block;
   margin-bottom: .5rem;
+  font-size: .875rem;
+  font-weight: bold;
 }
 
-.input {
-  font-family: inherit;
-  font-size: inherit;
+.u-input {
   display: block;
   width: 100%;
   height: 2.5rem;
   padding: .5rem;
   margin-bottom: 1rem;
+  font-family: inherit;
+  font-size: inherit;
   border: 1px solid #ccc;
   border-radius: 3px;
 }
 
-.select {
-  font-family: inherit;
-  font-size: inherit;
+.u-select {
   display: block;
   width: 100%;
   height: 2.5rem;
   padding: .5rem;
   margin-bottom: 1rem;
+  font-family: inherit;
+  font-size: inherit;
   border: 1px solid #ccc;
   border-radius: 3px;
 }
 
-.textarea {
-  font-family: inherit;
-  font-size: inherit;
+.u-textarea {
   display: block;
   width: 100%;
   padding: .5rem;
   margin-bottom: 1rem;
+  font-family: inherit;
+  font-size: inherit;
   border: 1px solid #ccc;
   border-radius: 3px;
 }

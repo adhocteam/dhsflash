@@ -17,30 +17,32 @@ $range-thumb-pseudo-size: $form-field-height !default;
 
 /* Basscss Input Range */
 
-.input-range {
-  vertical-align: middle;
-  background-color: transparent;
+.u-input-range {
   padding-top: $form-field-padding-y;
   padding-bottom: $form-field-padding-y;
+  vertical-align: middle;
   color: inherit;
   background-color: transparent;
+  background-color: transparent;
+
   -webkit-appearance: none;
 }
 
-.input-range::-webkit-slider-thumb {
+.u-input-range::-webkit-slider-thumb {
   position: relative;
   width: $range-thumb-width;
   height: $range-thumb-height;
-  cursor: pointer;
   margin-top: $range-thumb-offset;
+  cursor: pointer;
   border-radius: $border-radius;
   background-color: currentcolor;
+
   -webkit-appearance: none;
 }
 
 /* Touch screen friendly pseudo element */
 
-.input-range::-webkit-slider-thumb:before {
+.u-input-range::-webkit-slider-thumb:before {
   content: '';
   display: block;
   position: absolute;
@@ -51,30 +53,30 @@ $range-thumb-pseudo-size: $form-field-height !default;
   opacity: 0;
 }
 
-.input-range::-moz-range-thumb {
+.u-input-range::-moz-range-thumb {
   width: $range-thumb-width;
   height: $range-thumb-height;
   cursor: pointer;
-  border-radius: $border-radius;
-  border-color: transparent;
   border-width: 0;
+  border-color: transparent;
+  border-radius: $border-radius;
   background-color: currentcolor;
 }
 
-.input-range::-webkit-slider-runnable-track {
+.u-input-range::-webkit-slider-runnable-track {
   height: $range-track-height;
   cursor: pointer;
   border-radius: $border-radius;
   background-color: $darken-3;
 }
 
-.input-range::-moz-range-track {
+.u-input-range::-moz-range-track {
   height: $range-track-height;
   cursor: pointer;
   border-radius: $border-radius;
   background-color: $darken-3;
 }
 
-.input-range:focus {
+.u-input-range:focus {
   outline: none;
 }

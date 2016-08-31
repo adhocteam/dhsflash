@@ -17,35 +17,36 @@ $darken-3: rgba(0, 0, 0, .25) !default;
 
 /* Basscss Btn */
 
-.btn {
+.u-btn {
+  display: inline-block;
+  height: auto;
+  padding: $button-padding-y $button-padding-x;
+  margin: 0;
   font-family: $button-font-family;
   font-size: $button-font-size;
   font-weight: $button-font-weight;
+  line-height: $button-line-height;
+  vertical-align: middle;
   text-decoration: none;
   cursor: pointer;
-  display: inline-block;
-  line-height: $button-line-height;
-  padding: $button-padding-y $button-padding-x;
-  margin: 0;
-  height: auto;
-  border: $border-width solid transparent;
-  vertical-align: middle;
-  -webkit-appearance: none;
   color: inherit;
+  border: $border-width solid transparent;
   background-color: transparent;
+
+  -webkit-appearance: none;
 }
 
-.btn:hover {
+.u-btn:hover {
   text-decoration: none;
 }
 
-.btn:focus {
-  outline: none;
+.u-btn:focus {
   border-color: $darken-2;
+  outline: none;
   box-shadow: 0 0 0 3px $darken-3;
 }
 
 ::-moz-focus-inner {
-  border: 0;
   padding: 0;
+  border: 0;
 }
