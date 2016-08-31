@@ -39,6 +39,7 @@ describe 'creating a kudo', type: :feature, js: true do
     end
 
     it 'should present autocompletion options' do
+      pending("figuring out the race condition here")
       find('.ah-ac-textfield').set('bri')
       assert_selector('.ah-ac-match', count: 1)
       find('.ah-ac-textfield').set('FOO')
