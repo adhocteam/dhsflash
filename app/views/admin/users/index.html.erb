@@ -19,9 +19,16 @@
         </td>
         <td>
           <% if user != current_user %>
-            <% if !user.has_role?(:admin) %>
+            <% if user.has_role?(:admin) %>
+              <a href="<%= remove_admin_admin_user_path(user) %>" rel="nofollow" data-method="patch" data-tooltip aria-haspopup="true" data-disable-hover="false" tabindex="1" title="Remove admin role">
+                <i class="fi-x-circle"></i>
+              </a>
+            <% else %>
               <a href="<%= make_admin_admin_user_path(user) %>" rel="nofollow" data-method="patch" data-tooltip aria-haspopup="true" data-disable-hover="false" tabindex="1" title="Make admin">
                 <i class="fi-trophy"></i>
+              </a>
+              <a href="<%= admin_user_path(user) %>" rel="nofollow" data-method="delete" data-tooltip aria-haspopup="true" data-disable-hover="false" tabindex="1" title="Make admin">
+                <i class="fi-trash"></i>
               </a>
             <% end %>
           <% end %>

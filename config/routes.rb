@@ -4,8 +4,9 @@ Rails.application.routes.draw do
   root 'home#show'
 
   namespace :admin do
-    resources :users, only: [:index] do
+    resources :users, only: [:index, :destroy] do
       patch 'make_admin', on: :member
+      patch 'remove_admin', on: :member
     end
   end
 end
