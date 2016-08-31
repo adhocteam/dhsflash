@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
   resource :dashboard, only: [:show], controller: 'dashboard'
 
+  get '/users/search', to: 'users#search'
+
   root 'home#show'
 
   namespace :admin do
