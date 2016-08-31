@@ -1,0 +1,32 @@
+<h2>Users</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Admin?</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.name %></td>
+        <td><%= user.email %></td>
+        <td>
+          <i class="fi-<%= user.has_role?(:admin) ? 'check' : 'x' %>"></i>
+        </td>
+        <td>
+          <% if user != current_user %>
+            <% if !user.has_role?(:admin) %>
+              <a href="<%= make_admin_admin_user_path(user) %>" rel="nofollow" data-method="patch" data-tooltip aria-haspopup="true" data-disable-hover="false" tabindex="1" title="Make admin">
+                <i class="fi-trophy"></i>
+              </a>
+            <% end %>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

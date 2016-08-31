@@ -1,4 +1,5 @@
-@import "foundation_and_overrides";
+@import 'foundation_and_overrides';
+@import 'foundation-icons';
 
 #main-content {
   margin-top: 20px;
@@ -6,4 +7,8 @@
 
 .devise-action-links {
   font-size: 75%;
+}
+
+i {
+  font-size: 24px;
 }
