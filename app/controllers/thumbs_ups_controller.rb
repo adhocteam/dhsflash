@@ -3,7 +3,12 @@ class ThumbsUpsController < ApplicationController
   before_action :find_kudo
 
   def create
-
+    thumb = @kudo.thumbs_ups.create(user: current_user)
+    if thumb.valid?
+      head 200
+    else
+      render json: thumb.errors, status: 400
+    end
   end
 
   protected
