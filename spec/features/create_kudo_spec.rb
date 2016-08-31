@@ -21,13 +21,18 @@ describe 'creating a kudo', type: :feature do
 
     it 'should fail without a message' do
       click_button 'Post Kudo'
+      find('#kudo_recipient_id').select(recipient.username)
       expect(current_path).to eq('/kudos')
       expect(Kudo.count).to eq(0)
       expect(page).to have_content('Message can\'t be blank')
     end
 
-    it 'should kudo at somebody' do
+    it 'should fail without a recipient' do
       find('#kudo_message').set('This is a cheesy kudo')
+      click_button 'Post Kudo'
+      expect(current_path).to eq('/kudos')
+      expect(Kudo.count).to eq(0)
+      expect(page).to have_content('Recipient must exist')
     end
   end
 end
