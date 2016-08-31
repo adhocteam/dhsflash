@@ -13,6 +13,7 @@ gem 'pg'
 gem 'puma'
 gem 'rails'
 gem 'rolify'
+gem 'rubocop'
 gem 'sass-rails'
 gem 'turbolinks'
 gem 'uglifier'
@@ -26,7 +27,6 @@ end
 
 group :development do
   gem 'listen'
-  gem 'rubocop'
   gem 'spring'
   gem 'spring-watcher-listen'
   gem 'web-console'
