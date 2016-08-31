@@ -8,6 +8,9 @@ AllCops:
     - 'cache/**/*'
     - 'db/**/*'
 
+Style/BlockComments:
+  Enabled: false
+
 Metrics/LineLength:
   Max: 140
 
