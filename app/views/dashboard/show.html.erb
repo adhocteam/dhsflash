@@ -3,7 +3,7 @@
   <div class="small-12 columns">
     <div class="row">
       <div class="small-12 columns">
-        <%= form_for(Kudo.new, url: kudos_path) do |f| %>
+        <%= form_for(Kudo.new, url: kudos_path, remote: true) do |f| %>
           <%= f.select :recipient_id, User.select(:username, :id).all.collect { |p| [ p.username, p.id ] }, include_blank: true %>
           <div class="input-group">
             <%= f.text_field :message, autofocus: true, class: 'input-group-field' %>
@@ -17,17 +17,7 @@
     <div class="row">
       <div class="small-12 columns">
         <% @kudos.each do |kudo| %>
-          <div class="row">
-            <div class="small-12 columns">
-              <div class="callout kudo-card">
-                <h5><%= kudo.creator.name %> to <%= kudo.recipient.name %></h5>
-                <div class="date">
-                  <%= distance_of_time_in_words_to_now(kudo.created_at) %> ago
-                </div>
-                <blockquote><%= kudo.message %></blockquote>
-              </div>
-            </div>
-          </div>
+          <%= render partial: 'shared/kudo_card', locals: { kudo: kudo } %>
         <% end %>
       </div>
     </div>

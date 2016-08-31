@@ -4,10 +4,9 @@ class KudosController < ApplicationController
   def create
     @kudo = Kudo.create(kudo_params)
     if @kudo.save
-      redirect_to dashboard_path
+      render partial: 'shared/kudo_card', locals: { kudo: @kudo }
     else
-      @kudos = Kudo.all
-      render 'dashboard/show'
+      render partial: 'shared/error_messages_for', locals: { object: @kudo }, status: 400
     end
   end
 

@@ -1,0 +1,11 @@
+<div class="row">
+  <div class="small-12 columns">
+    <div class="callout kudo-card">
+      <h5><%= kudo.creator.name %> to <%= kudo.recipient.name %></h5>
+      <div class="date">
+        <%= distance_of_time_in_words_to_now(kudo.created_at) %> ago
+      </div>
+      <blockquote><%= kudo.message %></blockquote>
+    </div>
+  </div>
+</div>
