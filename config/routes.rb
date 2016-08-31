@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  resources :kudos, only: [:create]
+  resources :kudos, only: [:create] do
+    resources :thumbs_ups, only: [:create]
+  end
 
   resource :dashboard, only: [:show], controller: 'dashboard'
 

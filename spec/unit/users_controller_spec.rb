@@ -18,13 +18,13 @@ describe UsersController, type: :controller do
     it 'should return some users' do
       get(:search, params: { search: 'ant' })
       json = JSON.parse(response.body)
-      expect(json.map { |i| i['id'] }).to eq([user2.id, user3.id])
+      expect(json.map { |i| i['id'] }.sort).to eq([user2.id, user3.id].sort)
     end
 
     it 'should not return onesself' do
       get(:search, params: { search: 'an' })
       json = JSON.parse(response.body)
-      expect(json.map { |i| i['id'] }).to eq([user2.id, user3.id])
+      expect(json.map { |i| i['id'] }.sort).to eq([user2.id, user3.id].sort)
     end
   end
 end

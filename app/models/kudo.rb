@@ -1,6 +1,7 @@
 class Kudo < ApplicationRecord
   belongs_to :creator, class_name: User
   belongs_to :recipient, class_name: User
+  has_many :thumbs_ups
 
   validates :message, presence: true
   validate :cannot_kudo_onesself

@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row" id="kudo-<%= kudo.id %>">
   <div class="small-12 columns">
     <div class="callout kudo-card">
       <h5><%= kudo.creator.name %> to <%= kudo.recipient.name %></h5>
@@ -6,6 +6,10 @@
         <%= distance_of_time_in_words_to_now(kudo.created_at) %> ago
       </div>
       <blockquote><%= kudo.message %></blockquote>
+      <%= link_to(kudo_thumbs_ups_path(kudo), method: :post) do %>
+        <i class="fi-like"></i>
+        <span><%= kudo.thumbs_ups.count %></span>
+      <% end %>
     </div>
   </div>
 </div>

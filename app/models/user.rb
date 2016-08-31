@@ -3,6 +3,7 @@ class User < ApplicationRecord
 
   has_many :created_kudos, as: :creator
   has_many :recipient_kudos, as: :recipient
+  has_many :thumbs_ups
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
