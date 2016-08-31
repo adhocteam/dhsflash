@@ -8,9 +8,10 @@ gem install mailcatcher
 mailcatcher -b
 ```
 
-## Create the database
+## Create and migrate the database
 ```
 rake db:create
+rake db:migrate
 ```
 
 ## Start up the app
