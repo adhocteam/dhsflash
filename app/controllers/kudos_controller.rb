@@ -6,7 +6,8 @@ class KudosController < ApplicationController
     if @kudo.save
       redirect_to dashboard_path
     else
-      render 'home/show'
+      @kudos = Kudo.all
+      render 'dashboard/show'
     end
   end
 
@@ -14,9 +15,10 @@ class KudosController < ApplicationController
 
   def kudo_params
     ps = params.require(:kudo).permit(
-      :message
+      :message,
+      :recipient_id
     )
-    ps[:user_id] = current_user.id
+    ps[:creator_id] = current_user.id
     ps
   end
 end

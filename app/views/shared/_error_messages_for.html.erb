@@ -1,0 +1,14 @@
+<% if object && object.errors.any? %>
+  <div class="row">
+    <div class="small-12 columns">
+      <div class="callout alert">
+        <h5>Oops, that didn't work. Please correct the following:</h5>
+        <ul>
+          <% object.errors.full_messages.each do |error| %>
+            <li><%= error %></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+<% end %>
