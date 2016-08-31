@@ -3,7 +3,7 @@ require 'rails_helper'
 describe 'creating a kudo', type: :feature do
   context 'from the dashboard' do
     let!(:user) { FactoryGirl.create(:user) }
-    let!(:recipient) { FactoryGirl.create(:user) }
+    let!(:recipient) { FactoryGirl.create(:user, username: 'brianeno') }
 
     before do
       login_as(user, scope: :user)
@@ -35,6 +35,20 @@ describe 'creating a kudo', type: :feature do
       expect(current_path).to eq('/kudos')
       expect(Kudo.count).to eq(0)
       expect(page).to have_content('Recipient must exist')
+    end
+
+    it 'should present autocompletion options' do
+      find('.ah-ac-textfield').set('bri')
+      assert_selector('.ah-ac-match', count: 1)
+      find('.ah-ac-textfield').set('FOO')
+      assert_selector('.ah-ac-match', count: 0)
+      find('.ah-ac-textfield').set('bri')
+      find('.ah-ac-match').click
+      find('#kudo_message').set('Great job!')
+      click_button 'Post Kudo'
+      expect(current_path).to eq(dashboard_path)
+      expect(Kudo.where(message: 'Great job!').first).to be
+      expect(page).to have_content('Great job!')
     end
   end
 end
