@@ -22,6 +22,7 @@ class User < ApplicationRecord
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :username, presence: true, length: { maximum: 30 }, uniqueness: true
+  validates :title, presence: true
 
   def name
     "#{first_name} #{last_name}"
@@ -41,5 +42,10 @@ class User < ApplicationRecord
     else
       false
     end
+  end
+
+  def avatar_url
+    gravatar_id = Digest::MD5.hexdigest(email.downcase)
+    "http://gravatar.com/avatar/#{gravatar_id}.png?s=150"
   end
 end

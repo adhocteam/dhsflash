@@ -8,7 +8,12 @@
         <div class="small-10 columns">
           <div class="row">
             <div class="small-12 columns">
-              <h5><%= kudo.recipient.name %></h5>
+              <div class="recipient-info">
+                <h5>
+                  <%= link_to(kudo.recipient.name, user_path(kudo.recipient)) %>
+                </h5>
+                <span class="title"><%= kudo.recipient.title %></span>
+              </div>
               <blockquote><%= kudo.message %></blockquote>
             </div>
           </div>

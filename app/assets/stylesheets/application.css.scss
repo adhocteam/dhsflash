@@ -14,8 +14,21 @@ i {
   font-size: 24px;
 }
 
-.kudo-card h5 {
+.kudo-card .recipient-info h5 {
   margin-bottom: 0;
+  font-weight: bold;
+  font-size: 2em;
+  display: inline;
+}
+
+.kudo-card .recipient-info h5 a {
+  color: black;
+}
+
+.kudo-card .recipient-info .title {
+  font-size: 1.0em;
+  margin-left: 8px;
+  color: grey;
 }
 
 .kudo-card blockquote {
@@ -44,9 +57,11 @@ form label i {
   font-weight: bold;
   background-color: grey;
   border: 1px solib black;
-  height: 100%;
+  height: 150px;
+  width: 150px;
   text-align: center;
   padding-top: 18px;
+  background-repeat: none;
 }
 
 .profile-header {
