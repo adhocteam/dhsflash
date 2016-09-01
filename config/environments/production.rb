@@ -57,13 +57,13 @@ Rails.application.configure do
   # config.active_job.queue_name_prefix = "dhsflash_#{Rails.env}"
   config.action_mailer.perform_caching = false
 
-  config.action_mailer.default_url_options = { host: ENV['EMAIL_DEFAULT_HOST'] }
+  config.action_mailer.default_url_options = { host: 'ec2-54-162-68-27.compute-1.amazonaws.com' }
   config.action_mailer.smtp_settings = {
     address: 'smtp.sendgrid.net',
     port: '587',
     authentication: :plain,
-    user_name: ENV['SENDGRID_USERNAME'],
-    password: ENV['SENDGRID_PASSWORD'],
+    user_name: 'app55930251@heroku.com',
+    password: 'tostveev0017',
     domain: 'heroku.com',
     enable_starttls_auto: true
   }
