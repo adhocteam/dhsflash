@@ -52,5 +52,15 @@ describe 'creating a kudo', type: :feature, js: true do
       expect(Kudo.where(message: 'Great job!').first).to be
       expect(page).to have_content('Great job!')
     end
+
+    it 'should clear the form' do
+      find('#kudo_message').set('Great jams, bro')
+      find('.ah-ac-textfield').set('bri')
+      find('.ah-ac-match').click
+      click_button 'Post Kudo'
+      sleep 1
+      expect(find('#kudo_message').value).to eq('')
+      expect(find('.ah-ac-textfield').value).to eq('')
+    end
   end
 end
