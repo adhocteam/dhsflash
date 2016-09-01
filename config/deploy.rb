@@ -5,7 +5,7 @@ set :application, 'dhsflash'
 set :repo_url, 'git@github.com:adhocteam/dhsflash.git'
 
 # Default branch is :master
-# ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
+ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
 # Default deploy_to directory is /var/www/my_app_name
 set :deploy_to, '/home/ec2-user/www/dhsflash'
