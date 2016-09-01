@@ -22,11 +22,6 @@ i {
   margin-top: 15px;
 }
 
-.kudo-card .date {
-  font-size: 60%;
-  font-color: grey;
-}
-
 form label i {
   font-size: 100%;
 }
@@ -52,4 +47,20 @@ form label i {
   height: 100%;
   text-align: center;
   padding-top: 18px;
+}
+
+.profile-header {
+  margin-bottom: 40px;
+}
+
+.profile-avatar {
+  margin-bottom: 40px;
+}
+
+.profile-header h2 {
+  margin-bottom: 0;
+}
+
+.flag-inappropriate {
+  margin-right: 10px;
 }

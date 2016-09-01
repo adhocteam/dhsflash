@@ -36,6 +36,10 @@
       <div class='top-bar-right'>
         <ul class='menu'>
           <% if current_user %>
+            <li class="menu-text">
+              <i class="fi-torso"></i>
+              <%= current_user.name %>
+            </li>
             <% if current_user.has_role?(:admin) %>
               <li class='menu-text'>
                 <%= link_to('Manage Users', admin_users_path) %>

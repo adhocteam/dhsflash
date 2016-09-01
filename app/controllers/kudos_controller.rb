@@ -2,7 +2,7 @@ class KudosController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    kudos = Kudo.order(created_at: :desc)
+    kudos = Kudo.appropriate.order(created_at: :desc)
     if params[:filter] == 'about_me'
       kudos = kudos.where(recipient_id: current_user.id)
     elsif params[:filter] == 'from_me'
@@ -18,6 +18,12 @@ class KudosController < ApplicationController
     else
       render partial: 'shared/error_messages_for', locals: { object: @kudo }, status: 400
     end
+  end
+
+  def flag_inappropriate
+    kudo = Kudo.find(params[:id])
+    kudo.update_attributes(inappropriate_count: kudo.inappropriate_count + 1)
+    head :ok
   end
 
   protected
