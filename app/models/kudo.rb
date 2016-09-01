@@ -8,6 +8,8 @@ class Kudo < ApplicationRecord
 
   after_create :notify_recipient
 
+  scope :appropriate, -> { where('inappropriate_count < 1') }
+
   protected
 
   def notify_recipient

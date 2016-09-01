@@ -16,6 +16,14 @@
         <% end %>
       </div>
     </div>
+    <% if !session[:dashboard_greeting_seen] %>
+      <div class="row">
+        <div class="small-12 columns">
+          <h3>Hi <%= current_user.first_name %>,</h3>
+          <p>Welcome to Kudos! A fun and easy way to pat your colleagues on the back for the great work they do everyday.</p>
+        </div>
+      </div>
+    <% end %>
     <div class="row">
       <div class="small-12 columns">
         <div class="float-left">
