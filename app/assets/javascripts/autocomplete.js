@@ -48,15 +48,32 @@ function autocomplete(selectEl) {
 
     var matches = [];
 
+    // Handle clicks outside the open completions div
+    var handleDocumentClick = function(e) {
+        if (!e.target.matches('.ah-ac-match')) {
+            hideCompletions();
+        }
+    };
+
+    var showCompletions = function() {
+        matchesDiv.style.display = 'block';
+        document.addEventListener('click', handleDocumentClick);
+    };
+
+    var hideCompletions = function() {
+        matchesDiv.style.display = 'none';
+        document.removeEventListener('click', handleDocumentClick);
+    };
+
     // Fill the autocomplete div with matches
     var updateACMatches = function() {
         if (matches.length === 0) {
-            matchesDiv.style.display = 'none';
+            hideCompletions();
             setSelectVal(null);
             return;
         }
 
-        matchesDiv.style.display = 'block';
+        showCompletions();
         while (matchesDiv.hasChildNodes()) matchesDiv.removeChild(matchesDiv.lastChild);
         for (var i = 0; i < matches.length; i++) {
             var matchDiv = document.createElement('div');
@@ -79,7 +96,7 @@ function autocomplete(selectEl) {
     // Set the username and id behind the scene when user clicks on an autocomplete match
     var handleACMatchClick = function(e) {
         var id = e.target.getAttribute('data-recipient-id');
-        matchesDiv.style.display = 'none';
+        hideCompletions();
         // Set the <select>
         setSelectVal(id);
         // Replace the text field's value
