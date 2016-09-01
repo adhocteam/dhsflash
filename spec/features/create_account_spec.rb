@@ -11,6 +11,7 @@ describe 'the signup process', type: :feature do
         fill_in 'Username', with: Faker::Internet.user_name
         fill_in 'First name', with: Faker::Name.first_name
         fill_in 'Last name', with: Faker::Name.last_name
+        fill_in 'Title', with: Faker::Name.title
         find('#user_password').set('abc-123')
         fill_in 'Password confirmation', with: 'abc-123'
         click_button 'Sign up'
