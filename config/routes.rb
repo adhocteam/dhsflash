@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resource :dashboard, only: [:show], controller: 'dashboard'
 
   get '/users/search', to: 'users#search'
+  get '/users/:id', to: 'users#show', as: :user
 
   root 'home#show'
 
