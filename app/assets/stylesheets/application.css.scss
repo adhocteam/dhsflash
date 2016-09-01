@@ -53,15 +53,20 @@ form label i {
 }
 
 .user-avatar {
-  font-size: 70px;
-  font-weight: bold;
   background-color: grey;
   border: 1px solib black;
   height: 150px;
   width: 150px;
-  text-align: center;
-  padding-top: 18px;
   background-repeat: none;
+  position: relative;
+}
+
+.user-avatar .initials {
+  font-size: 35px;
+  font-weight: bold;
+  position: absolute;
+  bottom: -7px;
+  right: 5px;
 }
 
 .profile-header {
