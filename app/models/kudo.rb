@@ -6,7 +6,15 @@ class Kudo < ApplicationRecord
   validates :message, presence: true
   validate :cannot_kudo_onesself
 
+  after_create :notify_recipient
+
   protected
+
+  def notify_recipient
+    if recipient.should_get_notification?(:new_kudo)
+      KudoMailer.received_kudo_email(self).deliver
+    end
+  end
 
   def cannot_kudo_onesself
     errors.add(:recipient_id, 'cannot be the same as the creator') if creator_id == recipient_id

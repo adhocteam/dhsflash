@@ -10,11 +10,13 @@ function autocomplete(selectEl) {
     var usernameIdPairs = [];
     var options = selectEl.options;
     for (var i = 0; i < options.length; i++) {
+      if (options[i].value) {
         usernameIdPairs.push({
-            id: options[i].value,
-            username: options[i].text.toLowerCase(),
-            label: options[i].text
+          id: options[i].value,
+          username: options[i].text.toLowerCase(),
+          label: options[i].text
         });
+      }
     }
     usernameIdPairs.sort(function(a, b) {
         if (a.username < b.username) return -1;
@@ -88,8 +90,8 @@ function autocomplete(selectEl) {
         if (entry !== '') {
             for (var i = 0; i < usernameIdPairs.length; i++) {
                 var pair = usernameIdPairs[i];
-                if (pair.username.startsWith(entry)) {
-                    matches.push(pair);
+                if (pair.username.indexOf(entry) === 0) {
+                  matches.push(pair);
                 }
             }
         }
