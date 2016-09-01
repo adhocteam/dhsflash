@@ -21,5 +21,15 @@ describe 'creating a thumbs up', type: :feature, js: true do
       expect(kudo.thumbs_ups.first.user).to eq(thumbs_upper)
       expect(kudo.thumbs_ups.first.kudo).to eq(kudo)
     end
+
+    it 'should not let me thumbs up twice' do
+      sleep(1)
+      visit '/dashboard'
+      within("#kudo-#{kudo.id}") do
+        page.find('.thumbs-up').click
+      end
+      sleep(1)
+      expect(kudo.thumbs_ups.count).to eq(1)
+    end
   end
 end
