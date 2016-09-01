@@ -30,4 +30,16 @@ class User < ApplicationRecord
   def initials
     "#{first_name[0]}#{last_name[0]}".upcase
   end
+  
+  def should_get_notification?(type)
+    if notification_frequency == 'none'
+      false
+    elsif notification_frequency == 'all'
+      true
+    elsif notification_frequency == 'mentions' && type == :new_kudo
+      true
+    else
+      false
+    end
+  end
 end
