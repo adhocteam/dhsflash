@@ -1,10 +1,3 @@
-document.addEventListener('DOMContentLoaded', function() {
-    var usernameSelect = document.querySelector('#kudo_recipient_id');
-    if (usernameSelect) {
-      autocomplete(usernameSelect);
-    }
-});
-
 function autocomplete(selectEl) {
     // Get a list of username/ID pairs, lowercase the usernames for matching, and sort by them
     var usernameIdPairs = [];
@@ -26,6 +19,12 @@ function autocomplete(selectEl) {
 
     // Hide the <select>
     selectEl.style.display = 'none';
+
+    var setSelectVal = function(val) {
+        selectEl.value = val;
+        var event = new Event('change');
+        selectEl.dispatchEvent(event);
+    }
 
     // Insert the text field to replace it
     var textField = document.createElement('input');
@@ -53,7 +52,7 @@ function autocomplete(selectEl) {
     var updateACMatches = function() {
         if (matches.length === 0) {
             matchesDiv.style.display = 'none';
-            selectEl.value = null;
+            setSelectVal(null);
             return;
         }
 
@@ -82,7 +81,7 @@ function autocomplete(selectEl) {
         var id = e.target.getAttribute('data-recipient-id');
         matchesDiv.style.display = 'none';
         // Set the <select>
-        selectEl.value = id;
+        setSelectVal(id);
         // Replace the text field's value
         for (var i = 0; i < usernameIdPairs.length; i++) {
             if (id === usernameIdPairs[i].id) {

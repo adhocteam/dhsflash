@@ -4,9 +4,9 @@
     <div class="row">
       <div class="small-12 columns">
         <%= form_for(Kudo.new, url: kudos_path, remote: true) do |f| %>
-          <%= f.select :recipient_id, User.select(:username, :id).where.not(id: current_user.id).collect { |p| [ p.username, p.id ] }, include_blank: true %>
+          <%= f.select :recipient_id, User.select(:username, :id).where.not(id: current_user.id).collect { |p| [ p.username, p.id ] }, { include_blank: true }, required: true %>
           <div class="input-group">
-            <%= f.text_field :message, autofocus: true, class: 'input-group-field' %>
+            <%= f.text_field :message, autofocus: true, class: 'input-group-field', required: true %>
             <div class="input-group-button">
               <%= f.submit "Post Kudo", class: 'button success' %>
             </div>
