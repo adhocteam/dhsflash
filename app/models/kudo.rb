@@ -6,11 +6,17 @@ class Kudo < ApplicationRecord
   validates :message, presence: true
   validate :cannot_kudo_onesself
 
+  after_create :update_user_counts
   after_create :notify_recipient
 
   scope :appropriate, -> { where('inappropriate_count < 1') }
 
   protected
+
+  def update_user_counts
+    creator.update_attributes(kudos_sent: creator.kudos_sent + 1)
+    recipient.update_attributes(kudos_received: recipient.kudos_received + 1)
+  end
 
   def notify_recipient
     if recipient.should_get_notification?(:new_kudo)
