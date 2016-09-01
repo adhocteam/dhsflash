@@ -1,22 +1,15 @@
-document.addEventListener('DOMContentLoaded', function() {
-    var usernameSelect = document.querySelector('#kudo_recipient_id');
-    if (usernameSelect) {
-      autocomplete(usernameSelect);
-    }
-});
-
 function autocomplete(selectEl) {
     // Get a list of username/ID pairs, lowercase the usernames for matching, and sort by them
     var usernameIdPairs = [];
     var options = selectEl.options;
     for (var i = 0; i < options.length; i++) {
-      if (options[i].value) {
-        usernameIdPairs.push({
-          id: options[i].value,
-          username: options[i].text.toLowerCase(),
-          label: options[i].text
-        });
-      }
+        if (options[i].value) {
+            usernameIdPairs.push({
+                id: options[i].value,
+                username: options[i].text.toLowerCase(),
+                label: options[i].text
+            });
+        }
     }
     usernameIdPairs.sort(function(a, b) {
         if (a.username < b.username) return -1;
@@ -26,6 +19,12 @@ function autocomplete(selectEl) {
 
     // Hide the <select>
     selectEl.style.display = 'none';
+
+    var setSelectVal = function(val) {
+        selectEl.value = val;
+        var event = new Event('change');
+        selectEl.dispatchEvent(event);
+    }
 
     // Insert the text field to replace it
     var textField = document.createElement('input');
@@ -38,11 +37,14 @@ function autocomplete(selectEl) {
     var matchesDiv = document.createElement('div');
     matchesDiv.classList.add('ah-ac-matches');
     matchesDiv.style.position = 'absolute';
-    var tfBbox = textField.getBoundingClientRect();
-    matchesDiv.style.top = (tfBbox.top + textField.offsetHeight) + 'px';
-    matchesDiv.style.left = tfBbox.left + 'px';
-    matchesDiv.style.width = textField.offsetWidth + 'px';
     document.body.appendChild(matchesDiv);
+
+    var updateMatchesDivPos = function() {
+        var tfBbox = textField.getBoundingClientRect();
+        matchesDiv.style.top = (tfBbox.top + textField.offsetHeight) + 'px';
+        matchesDiv.style.left = tfBbox.left + 'px';
+        matchesDiv.style.width = textField.offsetWidth + 'px';
+    };
 
     var matches = [];
 
@@ -50,7 +52,7 @@ function autocomplete(selectEl) {
     var updateACMatches = function() {
         if (matches.length === 0) {
             matchesDiv.style.display = 'none';
-            selectEl.value = null;
+            setSelectVal(null);
             return;
         }
 
@@ -64,7 +66,13 @@ function autocomplete(selectEl) {
             matchesDiv.appendChild(matchDiv);
             matchDiv.addEventListener('click', handleACMatchClick);
         }
+        updateMatchesDivPos();
     };
+
+    // Fix up the position and width of the matches div if window is resized
+    window.addEventListener('resize', function(e) {
+        updateMatchesDivPos();
+    });
 
     updateACMatches();
 
@@ -73,7 +81,7 @@ function autocomplete(selectEl) {
         var id = e.target.getAttribute('data-recipient-id');
         matchesDiv.style.display = 'none';
         // Set the <select>
-        selectEl.value = id;
+        setSelectVal(id);
         // Replace the text field's value
         for (var i = 0; i < usernameIdPairs.length; i++) {
             if (id === usernameIdPairs[i].id) {
@@ -91,7 +99,7 @@ function autocomplete(selectEl) {
             for (var i = 0; i < usernameIdPairs.length; i++) {
                 var pair = usernameIdPairs[i];
                 if (pair.username.indexOf(entry) === 0) {
-                  matches.push(pair);
+                    matches.push(pair);
                 }
             }
         }
