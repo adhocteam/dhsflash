@@ -26,6 +26,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'capistrano', '~> 3.6'
   gem 'listen'
   gem 'spring'
   gem 'spring-watcher-listen'
