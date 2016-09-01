@@ -4,6 +4,7 @@ ruby '2.3.1'
 
 gem 'coffee-rails'
 gem 'devise'
+gem 'faker'
 gem 'foundation-icons-sass-rails'
 gem 'foundation-rails'
 gem 'jbuilder'
@@ -37,7 +38,6 @@ end
 
 group :test do
   gem 'database_cleaner'
-  gem 'faker'
   gem 'poltergeist'
   gem 'simplecov', require: false
 end

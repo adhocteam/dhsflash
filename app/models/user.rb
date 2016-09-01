@@ -22,6 +22,7 @@ class User < ApplicationRecord
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :username, presence: true, length: { maximum: 30 }, uniqueness: true
+  validates :title, presence: true
 
   def name
     "#{first_name} #{last_name}"

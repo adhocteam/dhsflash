@@ -18,13 +18,6 @@ describe 'viewing a user profile', type: :feature, js: true do
     login_as(user1, scope: :user)
   end
 
-  context "viewing their own profile" do
-    it 'should show a link to edit profile if the user if viewing their own profile' do
-      visit user_path(user1)
-      expect(page).to have_content 'Edit your profile'
-    end
-  end
-
   context "viewing another user profile" do
     it 'should show a link to edit profile if the user if viewing their own profile' do
       visit user_path(user2)

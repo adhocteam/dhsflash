@@ -14,8 +14,21 @@ i {
   font-size: 24px;
 }
 
-.kudo-card h5 {
+.kudo-card .recipient-info h5 {
   margin-bottom: 0;
+  font-weight: bold;
+  font-size: 2em;
+  display: inline;
+}
+
+.kudo-card .recipient-info h5 a {
+  color: black;
+}
+
+.kudo-card .recipient-info .title {
+  font-size: 1.0em;
+  margin-left: 8px;
+  color: grey;
 }
 
 .kudo-card blockquote {
@@ -40,13 +53,20 @@ form label i {
 }
 
 .user-avatar {
-  font-size: 70px;
-  font-weight: bold;
   background-color: grey;
   border: 1px solib black;
-  height: 100%;
-  text-align: center;
-  padding-top: 18px;
+  height: 150px;
+  width: 150px;
+  background-repeat: none;
+  position: relative;
+}
+
+.user-avatar .initials {
+  font-size: 35px;
+  font-weight: bold;
+  position: absolute;
+  bottom: -7px;
+  right: 5px;
 }
 
 .profile-header {
@@ -71,4 +91,19 @@ form label i {
 
 .leader-card h5 {
   display: inline;
+}
+
+.user-profile-header {
+  margin-bottom: 10px;
+}
+
+.user-profile-header h2 {
+  font-weight: bold;
+  display: inline;
+}
+
+.user-profile-header .title {
+  font-size: 1.0em;
+  margin-left: 8px;
+  color: grey;
 }

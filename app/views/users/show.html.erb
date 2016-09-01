@@ -1,19 +1,19 @@
 <!-- this page left unstyled -->
-<div class="row">
-  <div class="small-6 columns"><h2><%= @user.name %></h2></div>
-  <% if current_user.id == @user.id %>
-  <div class="small-2 columns"><%= link_to('Edit your profile', edit_user_registration_path) %></div>
-  <% end %>
+<div class="row user-profile-header">
+  <div class="small-6 columns">
+    <h2><%= @user.name %></h2>
+    <span class="title"><%= @user.title %></span>
+  </div>
 </div>
 
 <div class="row">
-  <div class="small-8 columns">
+  <div class="small-9 columns">
     <% @kudos.each do |kudo| %>
       <%= render partial: 'shared/kudo_card', locals: { kudo: kudo } %>
     <% end %>
   </div>
 
-  <div class="small-4 columns">
+  <div class="small-3 columns">
     <div id="user-kudos-sent"><p>Kudos given</p><div class="stat"><%= @sent.count %></div></div>
     <div id="user-kudos-received"><p>Kudos received</p><div class="stat"><%= @received.count %></div></div>
     <div id="user-reactions"><p>Reactions</p><div class="stat"><%= @reactions.count %></div></div>
