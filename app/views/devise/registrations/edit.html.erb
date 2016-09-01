@@ -1,8 +1,32 @@
 <div class="row">
   <div class="small-8 small-offset-2 columns">
-    <h2>Update your account</h2>
+    <%= render partial: 'shared/error_messages_for', locals: { object: resource } %>
+
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-      <%= devise_error_messages! %>
+      <h4>Notification Preferences</h4>
+      <div class="field">
+        <fieldset>
+          <legend>How often would you like to receive notifications?</legend>
+          <div><input type="radio" name="user[notification_frequency]" value="all" id="freq-all" <%= "checked=\"checked\"" if resource.notification_frequency.nil? || resource.notification_frequency == 'all' %>><label for="freq-all">All</label></div>
+          <div><input type="radio" name="user[notification_frequency]" value="mentions" id="freq-mentions" <%= "checked=\"checked\"" if resource.notification_frequency == 'mentions' %>><label for="freq-mentions">Only when you receive a new kudo</label></div>
+          <div><input type="radio" name="user[notification_frequency]" value="none" id="freq-none" <%= "checked=\"checked\"" if resource.notification_frequency == 'none' %>><label for="freq-none">None</label></div>
+        </fieldset>
+      </div>
+
+      <div class="field">
+        <fieldset>
+          <legend>How should we send the notifications?</legend>
+          <div><input type="radio" name="user[notification_method]" value="email" id="method-email" <%= "checked=\"checked\"" if resource.notification_method.nil? || resource.notification_method == 'email' %>><label for="freq-all">Email</label></div>
+          <div><input type="radio" name="user[notification_method]" value="text" id="method-text" <%= "checked=\"checked\"" if resource.notification_method == 'text' %>><label for="freq-mentions">Text</label></div>
+        </fieldset>
+      </div>
+
+      <div class="field">
+        <%= f.label :mobile_number %>
+        <%= f.text_field :mobile_number %>
+      </div>
+
+      <h4>Profile</h4>
 
       <div class="field">
         <%= f.label :email %>

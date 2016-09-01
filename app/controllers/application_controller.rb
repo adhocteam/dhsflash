@@ -7,7 +7,10 @@ class ApplicationController < ActionController::Base
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name, :last_name, :username])
-    devise_parameter_sanitizer.permit(:account_update, keys: [:first_name, :last_name, :username])
+    devise_parameter_sanitizer.permit(
+      :account_update,
+      keys: [:first_name, :last_name, :username, :notification_frequency, :notification_method, :mobile_number]
+    )
   end
 
   def not_found
@@ -16,7 +19,8 @@ class ApplicationController < ActionController::Base
 
   def require_admin
     if !current_user.try(:has_role?, :admin)
-      not_found
+      flash[:alert] = 'Only admins can view that page'
+      redirect_to dashboard_path
     end
   end
 
