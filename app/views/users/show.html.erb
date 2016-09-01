@@ -1,0 +1,23 @@
+<!-- this page left unstyled -->
+<div class="row">
+  <div class="small-6 columns"><h2><%= @user.name %></h2></div>
+  <% if current_user.id == @user.id %>
+  <div class="small-2 columns"><%= link_to('Edit your profile', edit_user_registration_path) %></div>
+  <% end %>
+</div>
+
+<div class="row">
+  <div class="small-8 columns">
+    <% @kudos.each do |kudo| %>
+      <%= render partial: 'shared/kudo_card', locals: { kudo: kudo } %>
+    <% end %>
+  </div>
+
+  <div class="small-4 columns">
+    <ul>
+    <li>Reactions <span class="badge"><%= @reactions.count %></span>
+    <li>Sent <span class="badge"><%= @sent.count %></span>
+    <li>Received <span class="badge"><%= @received.count %></span>
+    </ul>
+  </div>
+</div>
