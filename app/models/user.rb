@@ -27,6 +27,10 @@ class User < ApplicationRecord
     "#{first_name} #{last_name}"
   end
 
+  def initials
+    "#{first_name[0]}#{last_name[0]}".upcase
+  end
+  
   def should_get_notification?(type)
     if notification_frequency == 'none'
       false

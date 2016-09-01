@@ -14,7 +14,7 @@
       </thead>
       <tbody>
         <% @users.each do |user| %>
-          <tr>
+          <tr id="user-<%= user.id %>">
             <td><%= user.username %></td>
             <td><%= user.name %></td>
             <td><%= user.email %></td>
@@ -31,7 +31,7 @@
                   <a href="<%= make_admin_admin_user_path(user) %>" rel="nofollow" data-method="patch" data-tooltip aria-haspopup="true" data-disable-hover="false" tabindex="1" title="Make admin">
                     <i class="fi-trophy"></i>
                   </a>
-                  <a href="<%= admin_user_path(user) %>" rel="nofollow" data-method="delete" data-tooltip aria-haspopup="true" data-disable-hover="false" tabindex="1" title="Make admin">
+                  <a href="<%= admin_user_path(user) %>" rel="nofollow" data-method="delete" data-tooltip aria-haspopup="true" data-disable-hover="false" tabindex="1" title="Delete user">
                     <i class="fi-trash"></i>
                   </a>
                 <% end %>
