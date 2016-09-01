@@ -2,12 +2,14 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :kudos, only: [:index, :create] do
+    post 'flag_inappropriate', on: :member
     resources :thumbs_ups, only: [:create]
   end
 
   resource :dashboard, only: [:show], controller: 'dashboard'
 
   get '/users/search', to: 'users#search'
+  get '/users/:id', to: 'users#show', as: :user
 
   root 'home#show'
 

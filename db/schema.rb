@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160901015925) do
+ActiveRecord::Schema.define(version: 20160901190127) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,9 +18,10 @@ ActiveRecord::Schema.define(version: 20160901015925) do
   create_table "kudos", force: :cascade do |t|
     t.text     "message"
     t.integer  "creator_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
     t.integer  "recipient_id"
+    t.integer  "inappropriate_count", default: 0
     t.index ["creator_id"], name: "index_kudos_on_creator_id", using: :btree
     t.index ["recipient_id"], name: "index_kudos_on_recipient_id", using: :btree
   end
@@ -35,7 +36,7 @@ ActiveRecord::Schema.define(version: 20160901015925) do
     t.index ["name"], name: "index_roles_on_name", using: :btree
   end
 
-  create_table "thumbs_ups", id: false, force: :cascade do |t|
+  create_table "thumbs_ups", force: :cascade do |t|
     t.integer  "kudo_id"
     t.integer  "user_id"
     t.datetime "created_at", null: false
@@ -70,6 +71,9 @@ ActiveRecord::Schema.define(version: 20160901015925) do
     t.string   "notification_frequency", default: "all"
     t.string   "notification_method",    default: "email"
     t.string   "mobile_number"
+    t.integer  "kudos_sent",             default: 0
+    t.integer  "kudos_received",         default: 0
+    t.string   "title"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree

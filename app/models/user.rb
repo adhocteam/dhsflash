@@ -22,6 +22,7 @@ class User < ApplicationRecord
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :username, presence: true, length: { maximum: 30 }, uniqueness: true
+  validates :title, presence: true
 
   def name
     "#{first_name} #{last_name}"
@@ -30,7 +31,7 @@ class User < ApplicationRecord
   def initials
     "#{first_name[0]}#{last_name[0]}".upcase
   end
-  
+
   def should_get_notification?(type)
     if notification_frequency == 'none'
       false
