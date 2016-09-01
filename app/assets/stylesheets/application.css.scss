@@ -2,6 +2,8 @@
 @import 'foundation-icons';
 @import 'basscss-sass/scss/basscss.scss';
 
+@import '_partials/topbar';
+
 #main-content {
   margin-top: 20px;
 }
@@ -27,26 +29,29 @@ form label i {
 }
 
 .ah-ac-matches {
-  background: white;
   border: 1px solid grey;
+  background: white;
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+
   .ah-ac-match {
     padding: 7px;
     border-bottom: 1px solid #ccc;
   }
+
+
   :hover {
     background: papayawhip;
   }
 }
 
 .user-avatar {
+  height: 100%;
+  padding-top: 18px;
   font-size: 70px;
   font-weight: bold;
-  background-color: grey;
-  border: 1px solib black;
-  height: 100%;
   text-align: center;
-  padding-top: 18px;
+  border: 1px solib black;
+  background-color: grey;
 }
 
 .profile-header {
