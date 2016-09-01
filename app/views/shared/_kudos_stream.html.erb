@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="small-12 columns kudos-list">
+    <% if kudos.any? %>
+      <% kudos.each do |kudo| %>
+        <%= render partial: 'shared/kudo_card', locals: { kudo: kudo } %>
+      <% end %>
+    <% else %>
+      <div class="row">
+        <div class="small-8 small-offset-2 column">
+          <div class="callout warning float-center">
+            <h5>There are no kudos!</h5>
+            <p>Let's start kudoing each other</p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
