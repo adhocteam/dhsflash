@@ -1,9 +1,9 @@
 <!-- this page left unstyled -->
-<div class="row">
-  <div class="small-6 columns"><h2><%= @user.name %></h2></div>
-  <% if current_user.id == @user.id %>
-  <div class="small-2 columns"><%= link_to('Edit your profile', edit_user_registration_path) %></div>
-  <% end %>
+<div class="row user-profile-header">
+  <div class="small-6 columns">
+    <h2><%= @user.name %></h2>
+    <span class="title"><%= @user.title %></span>
+  </div>
 </div>
 
 <div class="row">
