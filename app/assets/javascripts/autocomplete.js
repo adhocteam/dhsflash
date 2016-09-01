@@ -36,11 +36,14 @@ function autocomplete(selectEl) {
     var matchesDiv = document.createElement('div');
     matchesDiv.classList.add('ah-ac-matches');
     matchesDiv.style.position = 'absolute';
-    var tfBbox = textField.getBoundingClientRect();
-    matchesDiv.style.top = (tfBbox.top + textField.offsetHeight) + 'px';
-    matchesDiv.style.left = tfBbox.left + 'px';
-    matchesDiv.style.width = textField.offsetWidth + 'px';
     document.body.appendChild(matchesDiv);
+
+    var updateMatchesDivPos = function() {
+        var tfBbox = textField.getBoundingClientRect();
+        matchesDiv.style.top = (tfBbox.top + textField.offsetHeight) + 'px';
+        matchesDiv.style.left = tfBbox.left + 'px';
+        matchesDiv.style.width = textField.offsetWidth + 'px';
+    };
 
     var matches = [];
 
@@ -62,7 +65,13 @@ function autocomplete(selectEl) {
             matchesDiv.appendChild(matchDiv);
             matchDiv.addEventListener('click', handleACMatchClick);
         }
+        updateMatchesDivPos();
     };
+
+    // Fix up the position and width of the matches div if window is resized
+    window.addEventListener('resize', function(e) {
+        updateMatchesDivPos();
+    });
 
     updateACMatches();
 
