@@ -20,5 +20,6 @@ $(function () {
     form.elements.kudo_message.value = '';
     form.querySelector('.ah-ac-textfield').value = '';
   }).on('ajax:error', function (e, xhr, status, error) {
+    $('#error-message-container').html(xhr.responseText);
   });
 });

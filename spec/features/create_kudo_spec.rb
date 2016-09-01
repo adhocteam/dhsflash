@@ -11,26 +11,26 @@ describe 'creating a kudo', type: :feature, js: true do
     end
 
     it 'should create the kudo' do
-      pending("remote kudo creation")
       find('#kudo_message').set('This is a cheesy kudo')
-      find('#kudo_recipient_id').select(recipient.username)
+      find('.ah-ac-textfield').set('bri')
+      find('.ah-ac-match').click
       click_button 'Post Kudo'
       expect(current_path).to eq(dashboard_path)
+      sleep 1
       expect(Kudo.where(message: 'This is a cheesy kudo').first).to be
       expect(page).to have_content('This is a cheesy kudo')
     end
 
     it 'should fail without a message' do
-      pending("remote kudo creation")
+      find('.ah-ac-textfield').set('bri')
+      find('.ah-ac-match').click
       click_button 'Post Kudo'
-      find('#kudo_recipient_id').select(recipient.username)
-      expect(current_path).to eq('/kudos')
+      expect(current_path).to eq('/dashboard')
       expect(Kudo.count).to eq(0)
       expect(page).to have_content('Message can\'t be blank')
     end
 
     it 'should fail without a recipient' do
-      pending("remote kudo creation")
       find('#kudo_message').set('This is a cheesy kudo')
       click_button 'Post Kudo'
       expect(current_path).to eq('/dashboard')
@@ -39,7 +39,6 @@ describe 'creating a kudo', type: :feature, js: true do
     end
 
     it 'should present autocompletion options' do
-      pending("figuring out the race condition here")
       find('.ah-ac-textfield').set('bri')
       assert_selector('.ah-ac-match', count: 1)
       find('.ah-ac-textfield').set('FOO')
@@ -49,6 +48,7 @@ describe 'creating a kudo', type: :feature, js: true do
       find('#kudo_message').set('Great job!')
       click_button 'Post Kudo'
       expect(current_path).to eq(dashboard_path)
+      sleep 1
       expect(Kudo.where(message: 'Great job!').first).to be
       expect(page).to have_content('Great job!')
     end
