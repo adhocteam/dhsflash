@@ -24,18 +24,12 @@ describe 'creating a kudo', type: :feature, js: true do
     it 'should fail without a message' do
       find('.ah-ac-textfield').set('bri')
       find('.ah-ac-match').click
-      click_button 'Post Kudo'
-      expect(current_path).to eq('/dashboard')
-      expect(Kudo.count).to eq(0)
-      expect(page).to have_content('Message can\'t be blank')
+      expect(find('form input[name="commit"]')[:disabled]).to be true
     end
 
     it 'should fail without a recipient' do
       find('#kudo_message').set('This is a cheesy kudo')
-      click_button 'Post Kudo'
-      expect(current_path).to eq('/dashboard')
-      expect(Kudo.count).to eq(0)
-      expect(page).to have_content('Recipient must exist')
+      expect(find('form input[name="commit"]')[:disabled]).to be true
     end
 
     it 'should present autocompletion options' do
