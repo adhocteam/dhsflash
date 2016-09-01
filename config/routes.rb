@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  resources :kudos, only: [:create] do
+  resources :kudos, only: [:index, :create] do
     resources :thumbs_ups, only: [:create]
   end
 
