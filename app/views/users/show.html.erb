@@ -7,15 +7,17 @@
 </div>
 
 <div class="row">
-  <div class="small-9 columns">
+  <div class="small-12 medium-9 columns">
     <% @kudos.each do |kudo| %>
       <%= render partial: 'shared/kudo_card', locals: { kudo: kudo } %>
     <% end %>
   </div>
 
-  <div class="small-3 columns">
-    <div id="user-kudos-sent"><p>Kudos given</p><div class="stat"><%= @sent.count %></div></div>
-    <div id="user-kudos-received"><p>Kudos received</p><div class="stat"><%= @received.count %></div></div>
-    <div id="user-reactions"><p>Reactions</p><div class="stat"><%= @reactions.count %></div></div>
+  <div class="small-12 medium-3 columns">
+    <div class="panel">
+      <div id="user-kudos-sent"><p>Kudos given</p><div class="stat"><%= @sent.count %></div></div>
+      <div id="user-kudos-received"><p>Kudos received</p><div class="stat"><%= @received.count %></div></div>
+      <div id="user-reactions"><p>Reactions</p><div class="stat"><%= @reactions.count %></div></div>
+    </div>
   </div>
 </div>
