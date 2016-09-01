@@ -17,6 +17,12 @@ describe 'filtering the kudos', type: :feature, js: true do
       expect(things.map { |i| i[:id].sub('kudo-', '').to_i }).to eq([kudo4.id, kudo3.id, kudo2.id, kudo1.id])
     end
 
+    it "should highlight the current user's kudos" do
+      login_as(user1)
+      visit '/dashboard'
+      expect(page).to have_css('.current-user-kudo', count: 2)
+    end
+
     # When I run this spec I get an error about Poltergeist.ObsoleteNode, saying that the content has been
     # replaced. It has been replaced, but isn't it the whole point of these tools that they update based
     # on that?
