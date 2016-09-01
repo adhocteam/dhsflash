@@ -16,7 +16,8 @@ class ApplicationController < ActionController::Base
 
   def require_admin
     if !current_user.try(:has_role?, :admin)
-      not_found
+      flash[:alert] = 'Only admins can view that page'
+      redirect_to dashboard_path
     end
   end
 

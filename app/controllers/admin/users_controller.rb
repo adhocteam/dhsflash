@@ -1,4 +1,5 @@
 class Admin::UsersController < ApplicationController
+  before_action :authenticate_user!
   before_action :require_admin
   before_action :find_user, only: [:destroy, :make_admin, :remove_admin]
   before_action :block_current_user, only: [:make_admin, :remove_admin]
