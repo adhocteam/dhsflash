@@ -14,5 +14,6 @@ $(function () {
     div = div.firstChild;
     list.insertBefore(div, list.firstChild);
   }).on('ajax:error', function (e, xhr, status, error) {
+    $('#error-message-container').html(xhr.responseText);
   });
 });
