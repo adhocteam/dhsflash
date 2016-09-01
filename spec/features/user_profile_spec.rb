@@ -40,7 +40,7 @@ describe 'viewing a user profile', type: :feature, js: true do
   it "should show the count details for the user" do
     visit user_path(user1)
     expect(page).to have_css('#user-reactions .stat', text: '1')
-    expect(page).to have_css('#user-received .stat', text: '2')
-    expect(page).to have_css('#user-sent .stat', text: '2')
+    expect(page).to have_css('#user-kudos-received .stat', text: '2')
+    expect(page).to have_css('#user-kudos-sent .stat', text: '2')
   end
 end

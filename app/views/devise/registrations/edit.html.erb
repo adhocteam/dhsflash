@@ -1,3 +1,19 @@
+<div class="row profile-header">
+  <div class="small-8 small-offset-2 columns">
+    <h2><%= resource.name %></h2>
+    <%= link_to('View your profile', '#') %>
+  </div>
+</div>
+
+<div class="row profile-avatar">
+  <div class="small-2 small-offset-2 columns">
+    <%= render partial: 'shared/user_avatar', locals: { user: resource } %>
+  </div>
+  <div class="small-6 columns">
+    <p><%= resource.email %></p>
+  </div>
+</div>
+
 <div class="row">
   <div class="small-8 small-offset-2 columns">
     <%= render partial: 'shared/error_messages_for', locals: { object: resource } %>
