@@ -24,12 +24,12 @@ describe 'creating a kudo', type: :feature, js: true do
     it 'should fail without a message' do
       find('.ah-ac-textfield').set('bri')
       find('.ah-ac-match').click
-      expect(find('form input[name="commit"]')[:disabled]).to be true
+      expect(find('input[name="commit"]')[:disabled]).to be true
     end
 
     it 'should fail without a recipient' do
       find('#kudo_message').set('This is a cheesy kudo')
-      expect(find('form input[name="commit"]')[:disabled]).to be true
+      expect(find('input[name="commit"]')[:disabled]).to be true
     end
 
     it 'should present autocompletion options' do
