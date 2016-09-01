@@ -6,10 +6,7 @@
         <%= distance_of_time_in_words_to_now(kudo.created_at) %> ago
       </div>
       <blockquote><%= kudo.message %></blockquote>
-      <%= link_to(kudo_thumbs_ups_path(kudo), method: :post) do %>
-        <i class="fi-like"></i>
-        <span><%= kudo.thumbs_ups.count %></span>
-      <% end %>
+      <%= render partial: 'shared/kudo_thumbs_up', locals: { kudo: kudo } %>
     </div>
   </div>
 </div>

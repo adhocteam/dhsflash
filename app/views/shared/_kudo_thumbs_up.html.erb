@@ -1,0 +1,4 @@
+<%= link_to(kudo_thumbs_ups_path(kudo), method: :post, class: 'thumbs-up') do %>
+  <i class="fi-like"></i>
+  <span><%= kudo.thumbs_ups.count %></span>
+<% end %>

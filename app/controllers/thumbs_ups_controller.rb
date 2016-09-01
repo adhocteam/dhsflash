@@ -5,7 +5,7 @@ class ThumbsUpsController < ApplicationController
   def create
     thumb = @kudo.thumbs_ups.create(user: current_user)
     if thumb.valid?
-      head 200
+      render partial: 'shared/kudo_thumbs_up', locals: { kudo: @kudo }
     else
       render json: thumb.errors, status: 400
     end
