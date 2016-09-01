@@ -1,6 +1,6 @@
 <div class="row">
   <div class="small-12 columns">
-    <div class="callout kudo-card" id="kudo-<%= kudo.id %>">
+    <div class="callout kudo-card <%= 'current-user-kudo' if current_user.id == kudo.recipient.id %>" id="kudo-<%= kudo.id %>">
       <div class="row">
         <div class="small-3 columns">
           <%= render partial: 'shared/user_avatar', locals: { user: kudo.recipient } %>
