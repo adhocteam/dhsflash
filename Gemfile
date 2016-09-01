@@ -15,7 +15,6 @@ gem 'raygun4ruby'
 gem 'rolify'
 gem 'rubocop'
 gem 'sass-rails'
-gem 'turbolinks'
 gem 'uglifier'
 
 group :development, :test do
