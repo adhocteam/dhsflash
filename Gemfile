@@ -27,6 +27,9 @@ end
 
 group :development do
   gem 'capistrano', '~> 3.6'
+  gem 'capistrano-rails', '~> 1.1'
+  gem 'capistrano-rbenv', '~> 2.0'
+
   gem 'listen'
   gem 'spring'
   gem 'spring-watcher-listen'
@@ -38,4 +41,8 @@ group :test do
   gem 'faker'
   gem 'poltergeist'
   gem 'simplecov', require: false
+end
+
+group :production do
+  gem 'therubyracer'
 end
