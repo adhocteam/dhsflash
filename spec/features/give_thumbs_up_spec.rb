@@ -16,6 +16,7 @@ describe 'creating a thumbs up', type: :feature, js: true do
     end
 
     it 'should create a thumbs up' do
+      sleep(1)
       expect(kudo.thumbs_ups.count).to eq(1)
       expect(kudo.thumbs_ups.first.user).to eq(thumbs_upper)
       expect(kudo.thumbs_ups.first.kudo).to eq(kudo)

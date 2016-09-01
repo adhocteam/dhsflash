@@ -1,6 +1,6 @@
-<div class="row" id="kudo-<%= kudo.id %>">
+<div class="row">
   <div class="small-12 columns">
-    <div class="callout kudo-card">
+    <div class="callout kudo-card" id="kudo-<%= kudo.id %>">
       <h5><%= kudo.creator.name %> to <%= kudo.recipient.name %></h5>
       <div class="date">
         <%= distance_of_time_in_words_to_now(kudo.created_at) %> ago
