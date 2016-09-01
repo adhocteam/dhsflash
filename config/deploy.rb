@@ -8,7 +8,7 @@ set :repo_url, 'git@github.com:adhocteam/dhsflash.git'
 ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
 # Default deploy_to directory is /var/www/my_app_name
-set :deploy_to, '/home/ec2-user/www/dhsflash'
+set :deploy_to, '/srv/dhsflash'
 
 # Default value for :scm is :git
 # set :scm, :git
@@ -24,10 +24,10 @@ set :deploy_to, '/home/ec2-user/www/dhsflash'
 # set :pty, true
 
 # Default value for :linked_files is []
-# append :linked_files, 'config/database.yml', 'config/secrets.yml'
+append :linked_files, 'config/database.yml', 'config/secrets.yml'
 
 # Default value for linked_dirs is []
-# append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'public/system'
+append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'public/system'
 
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
