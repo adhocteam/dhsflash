@@ -24,6 +24,8 @@ class User < ApplicationRecord
   validates :username, presence: true, length: { maximum: 30 }, uniqueness: true
   validates :title, presence: true
 
+  scope :confirmed, -> { where.not(confirmed_at: nil) }
+
   def name
     "#{first_name} #{last_name}"
   end
