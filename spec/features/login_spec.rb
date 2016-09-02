@@ -25,6 +25,11 @@ describe 'the signin process', type: :feature do
     it 'takes me to the dashboard' do
       expect(current_path).to eq(dashboard_path)
     end
+
+    it 'takes me to dashboard if I visit the homepage' do
+      visit '/'
+      expect(current_path).to eq(dashboard_path)
+    end
   end
 
   context 'when providing bogus data' do
