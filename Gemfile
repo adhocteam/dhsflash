@@ -2,10 +2,12 @@ source 'https://rubygems.org'
 
 ruby '2.3.1'
 
+gem 'carrierwave'
 gem 'coffee-rails'
 gem 'devise'
 gem 'devise_invitable'
 gem 'faker'
+gem "fog-aws"
 gem 'foundation-icons-sass-rails'
 gem 'foundation-rails'
 gem 'jbuilder'

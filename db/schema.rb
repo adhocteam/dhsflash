@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160902142522) do
+ActiveRecord::Schema.define(version: 20160902145432) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20160902142522) do
     t.integer  "recipient_id"
     t.integer  "inappropriate_count", default: 0
     t.string   "category"
+    t.string   "attachment"
     t.index ["creator_id"], name: "index_kudos_on_creator_id", using: :btree
     t.index ["recipient_id"], name: "index_kudos_on_recipient_id", using: :btree
   end
