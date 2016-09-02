@@ -12,6 +12,7 @@ gem 'foundation-icons-sass-rails'
 gem 'foundation-rails'
 gem 'jbuilder'
 gem 'jquery-rails'
+gem 'remotipart', :git => 'git://github.com/JangoSteve/remotipart.git', :branch => 'master' # rails 5 compat
 gem 'pg'
 gem 'puma'
 gem 'rails'

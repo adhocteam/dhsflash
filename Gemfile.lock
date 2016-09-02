@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/JangoSteve/remotipart.git
+  revision: 3b2ad2e706f9e8052fd7ce959d6ccd0d31cb37c2
+  branch: master
+  specs:
+    remotipart (1.2.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -335,6 +342,7 @@ DEPENDENCIES
   puma
   rails
   raygun4ruby
+  remotipart!
   rolify
   rspec-rails
   rubocop
