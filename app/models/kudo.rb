@@ -17,8 +17,8 @@ class Kudo < ApplicationRecord
   validate :cannot_kudo_onesself
   validate :only_one_per_day_per_person
   validate :either_recipient_or_recipient_email
-
   before_validation :see_if_recipient_exists, on: :create
+  validate :cannot_kudo_disabled_user
 
   after_create :update_user_counts
   after_create :notify_recipient
@@ -68,5 +68,9 @@ class Kudo < ApplicationRecord
     if recipient_id.nil? && recipient_email.blank?
       errors.add(:recipient_id, 'is required')
     end
+  end
+
+  def cannot_kudo_disabled_user
+    errors.add(:recipient_id, 'is disabled user') if !User.find(recipient_id).is_enabled?
   end
 end

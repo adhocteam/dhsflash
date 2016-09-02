@@ -1,90 +1,110 @@
 <div id="error-message-container">
   <%= render partial: 'shared/error_messages_for', locals: { object: @kudo } %>
 </div>
+
 <div class="row">
   <div class="small-12 columns">
-    <div class="row">
-      <div class="small-12 columns">
-        <%= form_for(Kudo.new, url: kudos_path, remote: true) do |f| %>
+    <div class="kudo-panel">
+      <h3>Give Kudos</h3>
+      <%= form_for(Kudo.new, url: kudos_path, remote: true) do |f| %>
+      <div class="row">
+        <div class="medium-4 columns">
+        <label for="">To</label>
+          <%= f.select :recipient_id, User.confirmed.where.not(id: current_user.id).collect { |p| ["#{p.name} - #{p.username}", p.id] }, { include_blank: true }, required: true %>
+        </div>
+
           <div class="field">
             <%= f.label :recipient_email %>
             <%= f.email_field :recipient_email %>
           </div>
-          <%= f.select :recipient_id, User.confirmed.where.not(id: current_user.id).collect { |p| ["#{p.name} - #{p.username}", p.id] }, { include_blank: true } %>
-          <%= f.select :category, Kudo::CATEGORIES, { include_blank: true }, required: true %>
-          <div class="input-group">
-            <%= f.text_field :message, autofocus: true, class: 'input-group-field', required: true %>
-            <%= f.file_field :attachment %>
-            <%= f.hidden_field :attachment_cache %>
-            <div class="input-group-button">
-              <%= f.submit "Post Kudo", class: 'button success' %>
+
+        <div class="medium-8 columns">
+          <label>Category</label>
+            <%= f.select :category, Kudo::CATEGORIES, { include_blank: true }, required: true %>
+          </div>
+        </div>
+
+
+            <div class="input-group">
+              <div class="row">
+                <div class="medium-12 columns">
+                  <label for="">Message</label>
+                  <%= f.text_field :message, autofocus: true, class: 'input-group-field', required: true %>
+                  <%= f.file_field :attachment %>
+                  <%= f.hidden_field :attachment_cache %>
+                </div>
+                <div class="small-12 columns">
+                  <div class="input-group-button">
+                    <%= f.submit "Post Kudo", class: 'button success' %>
+                  </div>
+                </div>
             </div>
           </div>
-        <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="small-12 medium-8 columns">
+    <% if !session[:dashboard_greeting_seen] %>
+      <div class="row">
+        <div class="small-12 columns">
+          <h3>Hi <%= current_user.first_name %>,</h3>
+          <p>Welcome to Kudos! A fun and easy way to pat your colleagues on the back for the great work they do everyday.</p>
+        </div>
+      </div>
+    <% end %>
+    <div class="row">
+      <div class="small-12 columns">
+        <div class="float-left">
+          <h4>Stream</h4>
+        </div>
+        <div class="float-right">
+          <select id="kudo-filter">
+            <option value="most_recent">Most Recent</option>
+            <option value="about_me">About Me</option>
+            <option value="from_me">From Me</option>
+          </select>
+        </div>
       </div>
     </div>
-    <div class="row">
-      <div class="small-12 medium-8 columns">
-        <% if !session[:dashboard_greeting_seen] %>
-          <div class="row">
-            <div class="small-12 columns">
-              <h3>Hi <%= current_user.first_name %>,</h3>
-              <p>Welcome to Kudos! A fun and easy way to pat your colleagues on the back for the great work they do everyday.</p>
+    <div id="kudo-stream">
+      <%= render partial: 'shared/kudos_stream', locals: { kudos: @kudos } %>
+    </div>
+  </div>
+  <div class="small-12 medium-4 columns">
+    <h3>Leaders</h3>
+    <ul class="tabs" data-tabs id="leader-tabs">
+      <li class="tabs-title is-active"><a href="#leaderboard-received" aria-selected="true">Received</a></li>
+      <li class="tabs-title"><a href="#leaderboard-sent">Sent</a></li>
+    </ul>
+    <div class="tabs-content" id="leader-tabs-content" data-tabs-content="leader-tabs">
+      <div class="tabs-panel is-active" id="leaderboard-received">
+        <% @received_leaders.each do |leader| %>
+          <div class="row leader-card">
+            <div class="small-10 columns">
+              <i class="fi-torso"></i>
+              <h5><%= leader.name %></h5>
+            </div>
+            <div class="small-2 columns">
+              <%= leader.kudos_received %>
             </div>
           </div>
         <% end %>
-        <div class="row">
-          <div class="small-12 columns">
-            <div class="float-left">
-              <h4>Stream</h4>
-            </div>
-            <div class="float-right">
-              <select id="kudo-filter">
-                <option value="most_recent">Most Recent</option>
-                <option value="about_me">About Me</option>
-                <option value="from_me">From Me</option>
-              </select>
-            </div>
-          </div>
-        </div>
-        <div id="kudo-stream">
-          <%= render partial: 'shared/kudos_stream', locals: { kudos: @kudos } %>
-        </div>
       </div>
-      <div class="small-12 medium-4 columns">
-        <h3>Leaders</h3>
-        <ul class="tabs" data-tabs id="leader-tabs">
-          <li class="tabs-title is-active"><a href="#leaderboard-received" aria-selected="true">Received</a></li>
-          <li class="tabs-title"><a href="#leaderboard-sent">Sent</a></li>
-        </ul>
-        <div class="tabs-content" id="leader-tabs-content" data-tabs-content="leader-tabs">
-          <div class="tabs-panel is-active" id="leaderboard-received">
-            <% @received_leaders.each do |leader| %>
-              <div class="row leader-card">
-                <div class="small-10 columns">
-                  <i class="fi-torso"></i>
-                  <h5><%= leader.name %></h5>
-                </div>
-                <div class="small-2 columns">
-                  <%= leader.kudos_received %>
-                </div>
-              </div>
-            <% end %>
+      <div class="tabs-panel" id="leaderboard-sent">
+        <% @sent_leaders.each do |leader| %>
+          <div class="row leader-card">
+            <div class="small-10 columns">
+              <i class="fi-torso"></i>
+              <h5><%= leader.name %></h5>
+            </div>
+            <div class="small-2 columns">
+              <%= leader.kudos_sent %>
+            </div>
           </div>
-          <div class="tabs-panel" id="leaderboard-sent">
-            <% @sent_leaders.each do |leader| %>
-              <div class="row leader-card">
-                <div class="small-10 columns">
-                  <i class="fi-torso"></i>
-                  <h5><%= leader.name %></h5>
-                </div>
-                <div class="small-2 columns">
-                  <%= leader.kudos_sent %>
-                </div>
-              </div>
-            <% end %>
-          </div>
-        </div>
+        <% end %>
       </div>
     </div>
   </div>

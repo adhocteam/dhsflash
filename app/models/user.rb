@@ -59,4 +59,13 @@ class User < ApplicationRecord
       update_attribute(kudos_received: kudos_received + 1)
     end
   end
+
+  def active_for_authentication?
+    super && is_enabled?
+  end
+
+  def toggle!
+    toggle(:is_enabled)
+    save!
+  end
 end

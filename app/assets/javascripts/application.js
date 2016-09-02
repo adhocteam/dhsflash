@@ -65,4 +65,26 @@ $(function () {
   }).on('ajax:error', function (e, xhr, status, error) {
     $('#error-message-container').html(xhr.responseText);
   });
+
+  // Table sorter
+  $('th').click(function(){
+    $(this).find('span.direction').remove();
+    var table = $(this).parents('table').eq(0);
+    var rows = table.find('tr:gt(0)').toArray().sort(comparer($(this).index()))
+    this.asc = !this.asc
+    $(this).append("<span class='direction' style='float: right'>" + (this.asc ? '↑' : '↓' ) + "</span>");
+    if (!this.asc){rows = rows.reverse()}
+    for (var i = 0; i < rows.length; i++){table.append(rows[i])}
+  });
+
+  function comparer(index) {
+    return function(a, b) {
+        var valA = getCellValue(a, index), valB = getCellValue(b, index)
+        return $.isNumeric(valA) && $.isNumeric(valB) ? valA - valB : valA.localeCompare(valB)
+    }
+  };
+
+  function getCellValue(row, index){
+    return $(row).children('td').eq(index).html();
+  }
 });
