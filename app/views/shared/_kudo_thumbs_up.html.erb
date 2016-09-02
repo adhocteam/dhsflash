@@ -1,6 +1,6 @@
 <%= link_to(kudo_thumbs_ups_path(kudo), method: :post, class: 'thumbs-up') do %>
   <% if kudo.thumbs_ups.size > 0 %>
-    <span data-tooltip aria-haspopup="true" class="has-tip top" data-disable-hover="false" title="<%= kudo.thumbs_ups.map { |tu| tu.user.name }.join("\n") %>">
+    <span data-tooltip aria-haspopup="true" class="has-tip top" data-disable-hover="false" title="<%= kudo.thumbs_ups.map { |tu| tu.user.name }.join(", ") %>">
   <% else %>
     <span>
   <% end %>
