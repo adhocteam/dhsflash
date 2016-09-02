@@ -45,4 +45,8 @@ class User < ApplicationRecord
       false
     end
   end
+
+  def active_for_authentication?
+    super && is_enabled?
+  end
 end

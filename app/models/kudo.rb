@@ -16,6 +16,7 @@ class Kudo < ApplicationRecord
   validates :message, presence: true
   validate :cannot_kudo_onesself
   validate :only_one_per_day_per_person
+  validate :cannot_kudo_disabled_user
 
   after_create :update_user_counts
   after_create :notify_recipient
@@ -46,5 +47,9 @@ class Kudo < ApplicationRecord
     if any
       errors.add(:recipient_id, 'can only receive one point from you per day')
     end
+  end
+  
+  def cannot_kudo_disabled_user
+    errors.add(:recipient_id, 'is disabled user') if !User.find(recipient_id).is_enabled?
   end
 end

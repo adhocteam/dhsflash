@@ -1,11 +1,11 @@
 class Admin::UsersController < ApplicationController
   before_action :authenticate_user!
   before_action :require_admin
-  before_action :find_user, only: [:destroy, :make_admin, :remove_admin]
+  before_action :find_user, only: [:destroy, :make_admin, :remove_admin, :toggle_user]
   before_action :block_current_user, only: [:make_admin, :remove_admin]
 
   def index
-    @users = User.all
+    @users = User.order :id
   end
 
   def destroy
@@ -20,6 +20,11 @@ class Admin::UsersController < ApplicationController
 
   def remove_admin
     @user.remove_role(:admin)
+    redirect_to admin_users_path
+  end
+
+  def toggle_user
+    @user.update(is_enabled: !@user.is_enabled?)
     redirect_to admin_users_path
   end
 

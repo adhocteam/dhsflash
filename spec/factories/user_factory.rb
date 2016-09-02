@@ -8,5 +8,6 @@ FactoryGirl.define do
     password 'abc-123'
     password_confirmation 'abc-123'
     confirmed_at { 3.days.ago }
+    is_enabled true
   end
 end

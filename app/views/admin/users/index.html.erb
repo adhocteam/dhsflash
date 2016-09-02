@@ -1,25 +1,31 @@
 <div class="row">
-  <div class="small-8 small-offset-2 columns">
+  <div class="small-8 small-offset-2 columns admin admin-user-list">
     <h2>Users</h2>
 
     <table>
       <thead>
         <tr>
+          <th>ID</th>
           <th>Username</th>
           <th>Name</th>
           <th>Email</th>
           <th>Admin?</th>
+          <th>Enabled?</th>
           <th>Actions</th>
         </tr>
       </thead>
       <tbody>
         <% @users.each do |user| %>
           <tr id="user-<%= user.id %>">
+            <td><%= user.id %></td>
             <td><%= user.username %></td>
             <td><%= user.name %></td>
             <td><%= user.email %></td>
             <td>
               <i class="fi-<%= user.has_role?(:admin) ? 'check' : 'x' %>"></i>
+            </td>
+            <td>
+              <i class="fi-<%= user.is_enabled? ? 'check' : 'x' %>"></i>
             </td>
             <td>
               <% if user != current_user %>
@@ -33,6 +39,13 @@
                   </a>
                   <a href="<%= admin_user_path(user) %>" rel="nofollow" data-method="delete" data-tooltip aria-haspopup="true" data-disable-hover="false" tabindex="1" title="Delete user">
                     <i class="fi-trash"></i>
+                  </a>
+                  <a href="<%= toggle_user_admin_user_path(user) %>" rel="nofollow" data-method="patch" data-tooltip aria-haspopup="true" data-disable-hover="false" tabindex="1" title="<% if user.is_enabled? %>Disable<% else %>Enable<% end %> user">
+                    <% if user.is_enabled? %>
+                      <i class="fi-power" style="color: grey"></i>
+                    <% else %>
+                      <i class="fi-power" style="color: black"></i>
+                    <% end %>
                   </a>
                 <% end %>
               <% end %>
