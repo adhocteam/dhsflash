@@ -12,8 +12,6 @@ describe 'viewing a user profile', type: :feature, js: true do
 
   let!(:kudo_unseen) { FactoryGirl.create(:kudo, creator: user3, recipient: user2) }
 
-  let!(:thumbs_up) { ThumbsUp.create(user: user1, kudo: kudo3) }
-
   before do
     login_as(user1, scope: :user)
   end
@@ -32,7 +30,6 @@ describe 'viewing a user profile', type: :feature, js: true do
 
   it "should show the count details for the user" do
     visit user_path(user1)
-    expect(page).to have_css('#user-reactions .stat', text: '1')
     expect(page).to have_css('#user-kudos-received .stat', text: '2')
     expect(page).to have_css('#user-kudos-sent .stat', text: '2')
   end
