@@ -14,7 +14,7 @@ describe Kudo, type: :model do
 
   context 'sent and receieved counts' do
     it 'should update its users after create' do
-      Kudo.create!(message: 'blat', creator: user, recipient: recipient)
+      Kudo.create!(message: 'blat', creator: user, recipient: recipient, category: Kudo::CATEGORIES.first)
       expect(user.reload.kudos_sent).to eq(1)
       expect(user.reload.kudos_received).to eq(0)
 
