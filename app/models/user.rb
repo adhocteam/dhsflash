@@ -16,7 +16,8 @@ class User < ApplicationRecord
     :validatable,
     :confirmable,
     :lockable,
-    :timeoutable
+    :timeoutable,
+    :invitable
   )
 
   validates :first_name, presence: true
