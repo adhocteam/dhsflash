@@ -33,7 +33,7 @@ class User < ApplicationRecord
   end
 
   def initials
-    "#{first_name[0]}#{last_name[0]}".upcase
+    (first_name && last_name && "#{first_name[0]}#{last_name[0]}".upcase) || '?'
   end
 
   def should_get_notification?(type)
