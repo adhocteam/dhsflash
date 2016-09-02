@@ -14,11 +14,15 @@ describe 'creating a kudo', type: :feature, js: true do
       find('#kudo_message').set('This is a cheesy kudo')
       find('#kudo_recipient_id').select('brianeno')
       find('#kudo_category').select('Teamwork')
+      attach_file('kudo_attachment', Rails.root.join('spec', 'fixtures', 'nice.gif'))
       click_button 'Post Kudo'
       expect(current_path).to eq(dashboard_path)
       sleep 1
-      expect(Kudo.where(message: 'This is a cheesy kudo').first).to be
+      kudo = Kudo.where(message: 'This is a cheesy kudo').first
+      expect(kudo).to be
+      expect(kudo.attachment).to be
       expect(page).to have_content('This is a cheesy kudo')
+      expect(page).to have_content('nice.gif')
     end
 
     it 'should fail without a message' do
