@@ -66,6 +66,7 @@ ActiveRecord::Schema.define(version: 20160902155508) do
     t.integer  "kudos_sent",             default: 0
     t.integer  "kudos_received",         default: 0
     t.string   "title"
+    t.boolean  "is_enabled"
     t.string   "invitation_token"
     t.datetime "invitation_created_at"
     t.datetime "invitation_sent_at"

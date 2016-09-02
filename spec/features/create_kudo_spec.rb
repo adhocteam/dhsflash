@@ -4,6 +4,7 @@ describe 'creating a kudo', type: :feature, js: true do
   context 'from the dashboard' do
     let!(:user) { FactoryGirl.create(:user) }
     let!(:recipient) { FactoryGirl.create(:user, username: 'brianeno') }
+    let!(:disabled_user) { FactoryGirl.create(:user, is_enabled: false) }
 
     before do
       login_as(user, scope: :user)
@@ -45,6 +46,10 @@ describe 'creating a kudo', type: :feature, js: true do
       expect(find('#kudo_message').value).to eq('')
       expect(find('#kudo_recipient_id').value).to eq('')
       expect(find('#kudo_category').value).to eq('')
+    end
+
+    it 'should not have disabled users as recipients' do
+      expect(page).to have_no_css('option[value="#{disabled_user.id}"]')
     end
   end
 end

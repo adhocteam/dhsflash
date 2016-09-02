@@ -16,6 +16,7 @@ Rails.application.routes.draw do
     resources :users, only: [:index, :destroy] do
       patch 'make_admin', on: :member
       patch 'remove_admin', on: :member
+      patch 'toggle_user', on: :member
     end
   end
 end
