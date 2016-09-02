@@ -16,7 +16,7 @@
               </div>
               <blockquote><%= kudo.message %></blockquote>
               <% if kudo.attachment? %>
-                <p>📎 <%= link_to(kudo.attachment_identifier, kudo.attachment.url) %></p>
+                <p>📎 <%= link_to(kudo.attachment_identifier, kudo.attachment.url, target: "_blank") %></p>
               <% end %>
             </div>
           </div>
