@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160902155508) do
+ActiveRecord::Schema.define(version: 20160902165719) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,11 +18,12 @@ ActiveRecord::Schema.define(version: 20160902155508) do
   create_table "kudos", force: :cascade do |t|
     t.text     "message"
     t.integer  "creator_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
     t.integer  "recipient_id"
     t.string   "category"
     t.string   "attachment"
+    t.string   "recipient_email"
     t.index ["creator_id"], name: "index_kudos_on_creator_id", using: :btree
     t.index ["recipient_id"], name: "index_kudos_on_recipient_id", using: :btree
   end
@@ -66,7 +67,6 @@ ActiveRecord::Schema.define(version: 20160902155508) do
     t.integer  "kudos_sent",             default: 0
     t.integer  "kudos_received",         default: 0
     t.string   "title"
-    t.boolean  "is_enabled"
     t.string   "invitation_token"
     t.datetime "invitation_created_at"
     t.datetime "invitation_sent_at"
@@ -75,6 +75,7 @@ ActiveRecord::Schema.define(version: 20160902155508) do
     t.string   "invited_by_type"
     t.integer  "invited_by_id"
     t.integer  "invitations_count",      default: 0
+    t.boolean  "is_enabled",             default: true
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["invitation_token"], name: "index_users_on_invitation_token", unique: true, using: :btree

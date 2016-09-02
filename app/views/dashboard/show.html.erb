@@ -10,8 +10,13 @@
       <div class="row">
         <div class="medium-4 columns">
         <label for="">To</label>
-          <%= f.select :recipient_id, User.confirmed.where.not(id: current_user.id).collect { |p| ["#{p.name} - #{p.username}", p.id] }, { include_blank: true }, required: true %>
+          <%= f.select :recipient_id, User.confirmed.where.not(id: current_user.id).collect { |p| ["#{p.name} - #{p.username}", p.id] }, { include_blank: true } %>
         </div>
+
+          <div class="field">
+            <%= f.label :recipient_email %>
+            <%= f.email_field :recipient_email %>
+          </div>
 
         <div class="medium-8 columns">
           <label>Category</label>

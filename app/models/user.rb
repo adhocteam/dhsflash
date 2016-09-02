@@ -26,6 +26,8 @@ class User < ApplicationRecord
 
   scope :confirmed, -> { where.not(confirmed_at: nil) }
 
+  after_create :attach_to_kudos
+
   def name
     "#{first_name} #{last_name}"
   end
@@ -43,6 +45,16 @@ class User < ApplicationRecord
       true
     else
       false
+    end
+  end
+
+  def attach_to_kudos
+    Kudo.where(recipient_id: nil, recipient_email: email).each do |kudo|
+      kudo.update_attributes(
+        recipient_id: id,
+        recipient_email: nil
+      )
+      # update_attribute(kudos_received: kudos_received + 1)
     end
   end
 
