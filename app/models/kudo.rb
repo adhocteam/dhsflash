@@ -11,7 +11,6 @@ class Kudo < ApplicationRecord
 
   belongs_to :creator, class_name: User
   belongs_to :recipient, class_name: User
-  has_many :thumbs_ups
 
   validates :category, presence: true
   validates :message, presence: true
@@ -20,8 +19,6 @@ class Kudo < ApplicationRecord
 
   after_create :update_user_counts
   after_create :notify_recipient
-
-  scope :appropriate, -> { where('inappropriate_count < 1') }
 
   protected
 

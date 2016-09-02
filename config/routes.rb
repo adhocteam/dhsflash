@@ -2,7 +2,6 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :kudos, only: [:index, :create] do
-    post 'flag_inappropriate', on: :member
     resources :thumbs_ups, only: [:create]
   end
 
