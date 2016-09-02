@@ -37,6 +37,9 @@
         <% if current_user %>
           <ul class="dropdown menu" data-dropdown-menu>
             <li>
+                <a href="/help/">Get Help</a>
+            </li>
+            <li>
               <a href="<%= user_path(current_user) %>">
                 <i class="fi-torso"></i>
                 <%= current_user.name %>
