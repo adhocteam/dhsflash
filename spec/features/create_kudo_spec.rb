@@ -14,6 +14,7 @@ describe 'creating a kudo', type: :feature, js: true do
       find('#kudo_message').set('This is a cheesy kudo')
       find('.ah-ac-textfield').set('bri')
       find('.ah-ac-match').click
+      find('#kudo_category').select('Teamwork')
       click_button 'Post Kudo'
       expect(current_path).to eq(dashboard_path)
       sleep 1
@@ -40,6 +41,7 @@ describe 'creating a kudo', type: :feature, js: true do
       find('.ah-ac-textfield').set('bri')
       find('.ah-ac-match').click
       find('#kudo_message').set('Great job!')
+      find('#kudo_category').select('Teamwork')
       click_button 'Post Kudo'
       expect(current_path).to eq(dashboard_path)
       sleep 1
@@ -49,12 +51,15 @@ describe 'creating a kudo', type: :feature, js: true do
 
     it 'should clear the form' do
       find('#kudo_message').set('Great jams, bro')
+      find('#kudo_category').set('Teamwork')
+      find('#kudo_category').select('Teamwork')
       find('.ah-ac-textfield').set('bri')
       find('.ah-ac-match').click
       click_button 'Post Kudo'
       sleep 1
       expect(find('#kudo_message').value).to eq('')
       expect(find('.ah-ac-textfield').value).to eq('')
+      expect(find('#kudo_category').value).to eq('')
     end
   end
 end

@@ -1,8 +1,17 @@
 class Kudo < ApplicationRecord
+
+  CATEGORIES = %w(
+    Teamwork
+    Improvement
+    Delivery
+    Experiment
+  ).freeze
+
   belongs_to :creator, class_name: User
   belongs_to :recipient, class_name: User
   has_many :thumbs_ups
 
+  validates :category, presence: true
   validates :message, presence: true
   validate :cannot_kudo_onesself
 

@@ -3,5 +3,6 @@ FactoryGirl.define do
     creator
     recipient
     message { Faker::Lorem.sentence(3) }
+    category { Kudo::CATEGORIES.first }
   end
 end
