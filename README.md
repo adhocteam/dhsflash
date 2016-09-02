@@ -49,3 +49,7 @@ admins in the UI.
 rails c
 User.first.add_role(:admin)
 ```
+
+test!
+another!
+another!
