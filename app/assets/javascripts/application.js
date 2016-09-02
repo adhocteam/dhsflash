@@ -44,6 +44,16 @@ $(function () {
 
   // Handle form submission
   $('#new_kudo').on('ajax:success', function (e, data, status, xhr) {
+    addKudo(data);
+  }).on('ajax:remotipartComplete', function (e, data) {
+    addKudo(data.responseText);
+  }).on('ajax:error', function (e, xhr, status, error) {
+    if(status != 'parsererror') { // remotipart is triggering this error callback
+      $('#error-message-container').html(xhr.responseText);
+    }
+  });
+
+  function addKudo(data) {
     var list = document.querySelector('.kudos-list');
     var div = document.createElement('div');
     div.innerHTML = data;
@@ -54,10 +64,9 @@ $(function () {
     var form = document.forms.new_kudo;
     form.elements.kudo_recipient_id.value = null;
     form.elements.kudo_category.value = null;
+    form.elements.kudo_attachment.value = null;
     form.elements.kudo_message.value = '';
-  }).on('ajax:error', function (e, xhr, status, error) {
-    $('#error-message-container').html(xhr.responseText);
-  });
+  };
 
   // Table sorter
   $('th').click(function(){
