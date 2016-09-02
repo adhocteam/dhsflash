@@ -2,14 +2,17 @@ source 'https://rubygems.org'
 
 ruby '2.3.1'
 
+gem 'carrierwave'
 gem 'coffee-rails'
 gem 'devise'
 gem 'devise_invitable'
 gem 'faker'
+gem "fog-aws"
 gem 'foundation-icons-sass-rails'
 gem 'foundation-rails'
 gem 'jbuilder'
 gem 'jquery-rails'
+gem 'remotipart', :git => 'git://github.com/JangoSteve/remotipart.git', :branch => 'master' # rails 5 compat
 gem 'pg'
 gem 'puma'
 gem 'rails'

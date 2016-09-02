@@ -7,6 +7,8 @@ class Kudo < ApplicationRecord
     Experiment
   ).freeze
 
+  mount_uploader :attachment, AttachmentUploader
+
   belongs_to :creator, class_name: User
   belongs_to :recipient, class_name: User
   has_many :thumbs_ups

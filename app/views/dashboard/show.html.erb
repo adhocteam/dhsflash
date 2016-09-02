@@ -10,6 +10,8 @@
           <%= f.select :category, Kudo::CATEGORIES, { include_blank: true }, required: true %>
           <div class="input-group">
             <%= f.text_field :message, autofocus: true, class: 'input-group-field', required: true %>
+            <%= f.file_field :attachment %>
+            <%= f.hidden_field :attachment_cache %>
             <div class="input-group-button">
               <%= f.submit "Post Kudo", class: 'button success' %>
             </div>

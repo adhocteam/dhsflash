@@ -32,7 +32,9 @@ class KudosController < ApplicationController
     ps = params.require(:kudo).permit(
       :message,
       :recipient_id,
-      :category
+      :category,
+      :attachment,
+      :attachment_cache
     )
     ps[:creator_id] = current_user.id
     ps
