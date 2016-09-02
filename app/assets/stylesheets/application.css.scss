@@ -175,11 +175,13 @@ form label i {
 
 .user-avatar {
   position: relative;
-  width: 150px;
-  height: 150px;
+  height: 0;
+  width: 100%;
   border: 1px solib black;
   background-color: grey;
   background-repeat: none;
+  background-size: cover;
+  padding-top: 100%;
 }
 
 .user-avatar .initials {
