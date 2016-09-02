@@ -61,11 +61,11 @@ $(function () {
 
   // Table sorter
   $('th').click(function(){
-    $(this).find('span.direction').remove();
     var table = $(this).parents('table').eq(0);
+    table.find('th span.direction').remove();
     var rows = table.find('tr:gt(0)').toArray().sort(comparer($(this).index()))
     this.asc = !this.asc
-    $(this).append("<span class='direction' style='float: right'>" + (this.asc ? '↑' : '↓' ) + "</span>");
+    $(this).append("<span class='direction'>" + (this.asc ? '↑' : '↓' ) + "</span>");
     if (!this.asc){rows = rows.reverse()}
     for (var i = 0; i < rows.length; i++){table.append(rows[i])}
   });
