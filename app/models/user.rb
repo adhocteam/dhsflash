@@ -54,7 +54,7 @@ class User < ApplicationRecord
         recipient_id: id,
         recipient_email: nil
       )
-      update_attribute(kudos_received: kudos_received + 1)
+      # update_attribute(kudos_received: kudos_received + 1)
     end
   end
 
