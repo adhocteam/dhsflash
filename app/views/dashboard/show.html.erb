@@ -17,7 +17,7 @@
       </div>
     </div>
     <div class="row">
-      <div class="small-8 columns">
+      <div class="small-12 medium-8 columns">
         <% if !session[:dashboard_greeting_seen] %>
           <div class="row">
             <div class="small-12 columns">
@@ -44,7 +44,7 @@
           <%= render partial: 'shared/kudos_stream', locals: { kudos: @kudos } %>
         </div>
       </div>
-      <div class="small-4 columns">
+      <div class="small-12 medium-4 columns">
         <h3>Leaders</h3>
         <ul class="tabs" data-tabs id="leader-tabs">
           <li class="tabs-title is-active"><a href="#leaderboard-received" aria-selected="true">Received</a></li>
