@@ -48,8 +48,6 @@ class User < ApplicationRecord
     end
   end
 
-  protected
-
   def attach_to_kudos
     Kudo.where(recipient_id: nil, recipient_email: email).each do |kudo|
       kudo.update_attributes(
