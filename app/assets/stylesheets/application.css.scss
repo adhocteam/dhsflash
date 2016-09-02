@@ -14,6 +14,40 @@ i {
   font-size: 24px;
 }
 
+.kudo-panel {
+  background: #00a6d2;
+  padding: .5em 1em;
+  h3 {font-weight: bold;}
+  label {color: #fff; font-weight: bold;}
+  color: #fff !important;
+  input.input-group-field {height: 4em; margin-bottom: 1em; width: 100%;}
+  border-radius: 3px;
+  -webkit-box-shadow: 0 0 5px rgba(0,0,0,.1);
+  margin: 0 0 2em 0;
+  .input-group-button {text-align: left; font-weight: bold; background: #0071bc;}
+}
+
+.input-group {
+}
+
+.top-bar {
+  background: #112e51;
+}
+
+.top-bar, .top-bar ul {
+    background-color: #112e51;
+    color: #fff;
+    font-size: 1em;
+    a {
+      color: #fff;
+    }
+}
+
+.top-bar-left a {
+  font-size: 1.35em;
+  font-weight: bold;
+}
+
 .kudo-card .recipient-info h5 {
   margin-bottom: 0;
   font-weight: bold;
