@@ -6,7 +6,11 @@
     <div class="row">
       <div class="small-12 columns">
         <%= form_for(Kudo.new, url: kudos_path, remote: true) do |f| %>
-          <%= f.select :recipient_id, User.confirmed.where.not(id: current_user.id).collect { |p| ["#{p.name} - #{p.username}", p.id] }, { include_blank: true }, required: true %>
+          <div class="field">
+            <%= f.label :recipient_email %>
+            <%= f.email_field :recipient_email %>
+          </div>
+          <%= f.select :recipient_id, User.confirmed.where.not(id: current_user.id).collect { |p| ["#{p.name} - #{p.username}", p.id] }, { include_blank: true } %>
           <%= f.select :category, Kudo::CATEGORIES, { include_blank: true }, required: true %>
           <div class="input-group">
             <%= f.text_field :message, autofocus: true, class: 'input-group-field', required: true %>

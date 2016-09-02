@@ -1,6 +1,6 @@
 <div class="row">
   <div class="small-12 columns">
-    <div class="callout kudo-card <%= 'current-user-kudo' if current_user.id == kudo.recipient.id %>" id="kudo-<%= kudo.id %>">
+    <div class="callout kudo-card <%= 'current-user-kudo' if current_user.id == kudo.recipient.try(:id) %>" id="kudo-<%= kudo.id %>">
       <div class="row">
         <div class="small-3 columns">
           <%= render partial: 'shared/user_avatar', locals: { user: kudo.recipient } %>
@@ -10,9 +10,15 @@
             <div class="small-12 columns">
               <div class="recipient-info">
                 <h5>
-                  <%= link_to(kudo.recipient.name, user_path(kudo.recipient)) %>
+                  <% if kudo.recipient %>
+                    <%= link_to(kudo.recipient.name, user_path(kudo.recipient)) %>
+                  <% else %>
+                    <%= kudo.recipient_email %>
+                  <% end %>
                 </h5>
-                <span class="title"><%= kudo.recipient.title %></span>
+                <% if kudo.recipient %>
+                  <span class="title"><%= kudo.recipient.title %></span>
+                <% end %>
               </div>
               <blockquote><%= kudo.message %></blockquote>
               <% if kudo.attachment? %>

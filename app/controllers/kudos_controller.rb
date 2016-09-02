@@ -26,6 +26,7 @@ class KudosController < ApplicationController
     ps = params.require(:kudo).permit(
       :message,
       :recipient_id,
+      :recipient_email,
       :category,
       :attachment,
       :attachment_cache
