@@ -16,6 +16,7 @@ class Kudo < ApplicationRecord
   validates :category, presence: true
   validates :message, presence: true
   validate :cannot_kudo_onesself
+  validate :only_one_per_day_per_person
 
   after_create :update_user_counts
   after_create :notify_recipient
@@ -37,5 +38,16 @@ class Kudo < ApplicationRecord
 
   def cannot_kudo_onesself
     errors.add(:recipient_id, 'cannot be the same as the creator') if creator_id == recipient_id
+  end
+
+  def only_one_per_day_per_person
+    any = Kudo
+      .where(creator_id: creator_id, recipient_id: recipient_id)
+      .where('created_at > ?', Date.today)
+      .where.not(id: id)
+      .any?
+    if any
+      errors.add(:recipient_id, 'can only receive one point from you per day')
+    end
   end
 end
