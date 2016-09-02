@@ -12,10 +12,8 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
 
-    @reactions = @user.thumbs_ups
-
-    @received = Kudo.appropriate.where(recipient_id: @user.id)
-    @sent = Kudo.appropriate.where(creator_id: @user.id)
+    @received = Kudo.where(recipient_id: @user.id)
+    @sent = Kudo.where(creator_id: @user.id)
 
     # TODO: where("creator_id = ? or recipient_id = ?", [@user.id, @user.id]) when we need to limit/page
     @kudos = @sent | @received

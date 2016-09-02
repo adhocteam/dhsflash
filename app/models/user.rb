@@ -3,7 +3,6 @@ class User < ApplicationRecord
 
   has_many :created_kudos, as: :creator
   has_many :recipient_kudos, as: :recipient
-  has_many :thumbs_ups
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
@@ -45,5 +44,14 @@ class User < ApplicationRecord
     else
       false
     end
+  end
+
+  def active_for_authentication?
+    super && is_enabled?
+  end
+
+  def toggle!
+    toggle(:is_enabled)
+    save!
   end
 end

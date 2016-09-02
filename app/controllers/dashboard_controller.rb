@@ -3,7 +3,7 @@ class DashboardController < ApplicationController
   after_action :mark_greeting_seen
 
   def show
-    @kudos = Kudo.appropriate.order(created_at: :desc)
+    @kudos = Kudo.order(created_at: :desc)
     @received_leaders = User.order(kudos_received: :desc).limit(4)
     @sent_leaders = User.order(kudos_sent: :desc).limit(4)
   end

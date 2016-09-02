@@ -11,16 +11,15 @@ class Kudo < ApplicationRecord
 
   belongs_to :creator, class_name: User
   belongs_to :recipient, class_name: User
-  has_many :thumbs_ups
 
   validates :category, presence: true
   validates :message, presence: true
   validate :cannot_kudo_onesself
+  validate :only_one_per_day_per_person
+  validate :cannot_kudo_disabled_user
 
   after_create :update_user_counts
   after_create :notify_recipient
-
-  scope :appropriate, -> { where('inappropriate_count < 1') }
 
   protected
 
@@ -37,5 +36,20 @@ class Kudo < ApplicationRecord
 
   def cannot_kudo_onesself
     errors.add(:recipient_id, 'cannot be the same as the creator') if creator_id == recipient_id
+  end
+
+  def only_one_per_day_per_person
+    any = Kudo
+      .where(creator_id: creator_id, recipient_id: recipient_id)
+      .where('created_at > ?', Date.today)
+      .where.not(id: id)
+      .any?
+    if any
+      errors.add(:recipient_id, 'can only receive one point from you per day')
+    end
+  end
+
+  def cannot_kudo_disabled_user
+    errors.add(:recipient_id, 'is disabled user') if !User.find(recipient_id).is_enabled?
   end
 end

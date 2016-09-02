@@ -16,7 +16,7 @@
               </div>
               <blockquote><%= kudo.message %></blockquote>
               <% if kudo.attachment? %>
-                <p>📎 <%= link_to(kudo.attachment_identifier, kudo.attachment.url) %></p>
+                <p>📎 <%= link_to(kudo.attachment_identifier, kudo.attachment.url, target: "_blank") %></p>
               <% end %>
             </div>
           </div>
@@ -26,10 +26,6 @@
                 <i class="fi-torso"></i>
                 <%= link_to(kudo.creator.name, user_path(kudo.creator)) %>
                 <%= distance_of_time_in_words_to_now(kudo.created_at) %> ago
-              </div>
-              <div class="controls float-right">
-                <%= render partial: 'shared/kudo_flag_inappropriate', locals: { kudo: kudo } %>
-                <%= render partial: 'shared/kudo_thumbs_up', locals: { kudo: kudo } %>
               </div>
             </div>
           </div>
