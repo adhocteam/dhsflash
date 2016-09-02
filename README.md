@@ -51,3 +51,4 @@ User.first.add_role(:admin)
 ```
 
 test!
+another!
