@@ -18,8 +18,8 @@
     <meta name="apple-mobile-web-app-title" content="DHS">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="mobile-web-app-capable" content="yes">
-    <title>DHS Flash</title>
-    <title><%= content_for?(:title) ? yield(:title) : 'DHS Flash' %></title>
+    <title>DHS Kudos</title>
+    <title><%= content_for?(:title) ? yield(:title) : 'DHS Kudos' %></title>
     <%= stylesheet_link_tag('application') %>
     <%= javascript_include_tag('application') %>
     <%= csrf_meta_tags %>
@@ -29,7 +29,7 @@
       <div class='top-bar-left'>
         <ul class='menu'>
           <li class='menu-text'>
-            <%= link_to('DHS FLASH', current_user ? dashboard_path : root_path) %>
+            <%= link_to('DHS Kudos', current_user ? dashboard_path : root_path) %>
           </li>
         </ul>
       </div>
@@ -76,7 +76,7 @@
     </div>
 
     <div class='row' id='main-content'>
-      <div class='medium-8 medium-offset-2'>
+      <div class='small-12'>
         <% if alert.present? %>
           <div class="callout alert">
             <p class='alert'><%= alert %></p>

@@ -17,10 +17,11 @@ $(function () {
   if (form) {
     var recipientIdEl = form.elements.kudo_recipient_id;
     var messageEl = form.elements.kudo_message;
+    var categoryEl = form.elements.kudo_category;
     var submitBtn = form.elements.commit;
 
     var valid = function() {
-      return messageEl.value.length !== 0 && recipientIdEl.value.length !== 0;
+      return messageEl.value.length !== 0 && recipientIdEl.value.length !== 0 && categoryEl.value.length !== 0;
     };
 
     var doValidityCheck = function() {
@@ -39,6 +40,10 @@ $(function () {
       doValidityCheck();
     });
 
+    categoryEl.addEventListener('change', function(e) {
+      doValidityCheck();
+    });
+
     doValidityCheck();
   }
 
@@ -53,6 +58,7 @@ $(function () {
     // Clear form
     var form = document.forms.new_kudo;
     form.elements.kudo_recipient_id.value = null;
+    form.elements.kudo_category.value = null;
     form.elements.kudo_message.value = '';
     form.querySelector('.ah-ac-textfield').value = '';
   }).on('ajax:error', function (e, xhr, status, error) {
