@@ -24,7 +24,7 @@ class Admin::UsersController < ApplicationController
   end
 
   def toggle_user
-    @user.update(is_enabled: !@user.is_enabled?)
+    @user.toggle!
     redirect_to admin_users_path
   end
 
