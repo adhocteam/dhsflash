@@ -4,4 +4,8 @@ class HomeController < ApplicationController
       redirect_to(dashboard_path)
     end
   end
+
+  def help
+
+  end
 end

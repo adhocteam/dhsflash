@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   get '/users/search', to: 'users#search'
   get '/users/:id', to: 'users#show', as: :user
 
+  get '/help', to: 'home#help'
+
   root 'home#show'
 
   namespace :admin do
