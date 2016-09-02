@@ -4,6 +4,7 @@ ruby '2.3.1'
 
 gem 'coffee-rails'
 gem 'devise'
+gem 'devise_invitable'
 gem 'faker'
 gem 'foundation-icons-sass-rails'
 gem 'foundation-rails'

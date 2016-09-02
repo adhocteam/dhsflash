@@ -27,6 +27,18 @@ class ApplicationController < ActionController::Base
         :mobile_number
       ]
     )
+    devise_parameter_sanitizer.permit(
+      :accept_invitation,
+      keys: [
+        :first_name,
+        :last_name,
+        :username,
+        :title,
+        :password,
+        :password_confirmation,
+        :invitation_token
+      ]
+    )
   end
 
   def not_found
