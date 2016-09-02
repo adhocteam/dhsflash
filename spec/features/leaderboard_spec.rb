@@ -4,11 +4,11 @@ describe 'the leaderboard', type: :feature, js: true do
   let!(:user1) { FactoryGirl.create(:user) }
   let!(:user2) { FactoryGirl.create(:user, username: 'brianeno') }
 
-  let!(:kudo1) { FactoryGirl.create(:kudo, creator: user1, recipient: user2) }
-  let!(:kudo2) { FactoryGirl.create(:kudo, creator: user1, recipient: user2) }
-  let!(:kudo3) { FactoryGirl.create(:kudo, creator: user1, recipient: user2) }
-  let!(:kudo4) { FactoryGirl.create(:kudo, creator: user2, recipient: user1) }
-  let!(:kudo5) { FactoryGirl.create(:kudo, creator: user2, recipient: user1) }
+  let!(:kudo1) { FactoryGirl.create(:kudo, creator: user1, recipient: user2, created_at: 20.days.ago) }
+  let!(:kudo2) { FactoryGirl.create(:kudo, creator: user1, recipient: user2, created_at: 18.days.ago) }
+  let!(:kudo3) { FactoryGirl.create(:kudo, creator: user1, recipient: user2, created_at: 16.days.ago) }
+  let!(:kudo4) { FactoryGirl.create(:kudo, creator: user2, recipient: user1, created_at: 14.days.ago) }
+  let!(:kudo5) { FactoryGirl.create(:kudo, creator: user2, recipient: user1, created_at: 12.days.ago) }
 
   it 'should show received counts on the leaderboard' do
     login_as(user1)
