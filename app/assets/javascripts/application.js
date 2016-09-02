@@ -6,12 +6,6 @@
 $(function () {
   $(document).foundation();
 
-  // Replace the username <select> with an autocompletion text widget
-  var usernameSelect = document.querySelector('#kudo_recipient_id');
-  if (usernameSelect) {
-    autocomplete(usernameSelect);
-  }
-
   // Do form validation
   var form = document.forms.new_kudo;
   if (form) {
@@ -60,7 +54,6 @@ $(function () {
     form.elements.kudo_recipient_id.value = null;
     form.elements.kudo_category.value = null;
     form.elements.kudo_message.value = '';
-    form.querySelector('.ah-ac-textfield').value = '';
   }).on('ajax:error', function (e, xhr, status, error) {
     $('#error-message-container').html(xhr.responseText);
   });

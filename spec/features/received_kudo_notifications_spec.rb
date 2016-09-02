@@ -8,8 +8,7 @@ describe 'notifying the user on new kudos', type: :feature, js: true do
     it 'should send them an email' do
       login_as(creator)
       visit '/dashboard'
-      find('.ah-ac-textfield').set('bozo')
-      find('.ah-ac-match').click
+      find('#kudo_recipient_id').select('bozo')
       find('#kudo_message').set('You are a clown')
       find('#kudo_category').select('Teamwork')
       click_button 'Post Kudo'
